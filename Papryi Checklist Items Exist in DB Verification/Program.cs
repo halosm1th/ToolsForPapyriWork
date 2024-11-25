@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace PapyriChecklistItems;
+using 
+class PapyriChecklistInfo
+{
+    public static void Main()
+    {
+        
+    }
+}
