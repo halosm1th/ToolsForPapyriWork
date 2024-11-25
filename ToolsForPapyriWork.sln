@@ -2,9 +2,19 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Papryi Checklist Items Exist in DB Verification", "Papryi Checklist Items Exist in DB Verification\Papryi Checklist Items Exist in DB Verification.csproj", "{A448BEED-57D3-4D59-80EB-BBFECFE49CB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSpreadSheetData", "GetSpreadSheetData\GetSpreadSheetData.csproj", "{64C4BF23-666E-4077-9F78-F5720CAB6B97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64C4BF23-666E-4077-9F78-F5720CAB6B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C4BF23-666E-4077-9F78-F5720CAB6B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C4BF23-666E-4077-9F78-F5720CAB6B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C4BF23-666E-4077-9F78-F5720CAB6B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A448BEED-57D3-4D59-80EB-BBFECFE49CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A448BEED-57D3-4D59-80EB-BBFECFE49CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
