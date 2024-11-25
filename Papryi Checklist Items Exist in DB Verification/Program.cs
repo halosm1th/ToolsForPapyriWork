@@ -1,5 +1,7 @@
 ﻿namespace PapyriChecklistItems;
-using 
+using System.Net;
+using HtmlAgilityPack;
+using Microsoft.VisualBasic;
 class PapyriChecklistInfo
 {
     public static void Main()

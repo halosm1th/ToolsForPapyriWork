@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ai/uBTVKG1kKwe29KNSe8m4enkqhVPbLByd+MBNji7XPXiJb9IJTfiUM0nbISBwcZ90MdRdoeGkTnLUZS+vfgg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thoma\\RiderProjects\\ToolsForPapyriWork\\Papryi Checklist Items Exist in DB Verification\\Papryi Checklist Items Exist in DB Verification.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thoma\\.nuget\\packages\\htmlagilitypack\\1.11.71\\htmlagilitypack.1.11.71.nupkg.sha512"
+  ],
+  "logs": []
+}
