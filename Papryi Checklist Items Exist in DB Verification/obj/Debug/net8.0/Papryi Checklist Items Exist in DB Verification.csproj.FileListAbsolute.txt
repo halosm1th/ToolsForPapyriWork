@@ -1,0 +1,18 @@
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\bin\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.exe
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\bin\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.deps.json
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\bin\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.runtimeconfig.json
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\bin\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.dll
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\bin\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.pdb
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\bin\Debug\net8.0\HtmlAgilityPack.dll
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.csproj.AssemblyReference.cache
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.AssemblyInfoInputs.cache
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.AssemblyInfo.cs
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.csproj.CoreCompileInputs.cache
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.sourcelink.json
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi C.85C1215A.Up2Date
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.dll
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\refint\Papryi Checklist Items Exist in DB Verification.dll
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.pdb
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\Papryi Checklist Items Exist in DB Verification.genruntimeconfig.cache
+C:\Users\thoma\RiderProjects\ToolsForPapyriWork\Papryi Checklist Items Exist in DB Verification\obj\Debug\net8.0\ref\Papryi Checklist Items Exist in DB Verification.dll
