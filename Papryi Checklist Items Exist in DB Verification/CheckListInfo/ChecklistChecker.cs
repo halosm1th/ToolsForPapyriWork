@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
@@ -35,7 +36,7 @@ class ChecklistChecker
         throw new IndexOutOfRangeException("No header starting the Papyri Info section could be found at: " + filePath);
     }
 
-    public void ParseTokenizedCheckList()
+    public List<ParsedCheckListItem> ParseTokenizedCheckList()
     {
         var parsedTokens = new List<ParsedCheckListItem>();
         
@@ -44,18 +45,17 @@ class ChecklistChecker
             if (token.TokenType == ChecklistTokenType.Header)
             {
                 parsedTokens.Add(ParseHeader(token.TokenText));
-                Console.WriteLine(((CheckListHeader) parsedTokens.Last()).Header);
             }else if (token.TokenType == ChecklistTokenType.Journal)
             {
                 parsedTokens.Add(ParseJournal(token.TokenText));
-                Console.WriteLine(((CheckListJournal) parsedTokens.Last()).JournalTitle);
 
             }else if (token.TokenType == ChecklistTokenType.Volume)
             {
                 parsedTokens.Add(ParseVolume(token.TokenText));
-                Console.WriteLine(((CheckListVolume) parsedTokens.Last()).VolumeTitle);
             }
         }
+
+        return parsedTokens;
     }
 
     //I, ed. F. Preisigke. Berlin/Leipzig 1922. &#91;WdG&#93; [Online: archive.org](https://archive.org/details/pst.000010146934)
@@ -79,6 +79,10 @@ class ChecklistChecker
         if (tokenText.Contains(", ed."))
         {
             splitParts = tokenText.Split(", ed.");
+        }else if (tokenText.Contains("P.") || tokenText.Contains("O.") || tokenText.Contains("BKU") 
+                  || tokenText.Contains("CPR") || tokenText.Contains("SB Kopt"))
+        {
+            splitParts = new[] { tokenText};
         }
         else
         {
@@ -182,6 +186,11 @@ class ChecklistChecker
         for (; startOfPapyriInfoIndex < CheckListLines.Length; startOfPapyriInfoIndex++)
         {
             var lineType = DetermineLineType(startOfPapyriInfoIndex);
+            if (HeaderFound && lineType.TokenType == ChecklistTokenType.Appendix)
+            {
+                HeaderFound = false;
+            }
+            
             if(HeaderFound) tokens.Add(lineType);
             if (!HeaderFound && lineType.TokenType == ChecklistTokenType.Header)
             {
@@ -203,6 +212,8 @@ class ChecklistChecker
             return new CheckListToken(ChecklistTokenType.Other, line);
         if(line.StartsWith("#####"))
             return new CheckListToken(ChecklistTokenType.Other, line);
+        if (line.StartsWith("## <a id=\"Appendix\">Appendix:"))
+            return new CheckListToken(ChecklistTokenType.Appendix, line);
         
         if (line.StartsWith("###"))
         {
@@ -223,12 +234,164 @@ class ChecklistChecker
         
         return new CheckListToken(ChecklistTokenType.Other, line);
     }
+
+    public List<ParsedCheckListBlock> StructureParsedData(List<ParsedCheckListItem> parsedData)
+    {
+        var parsedBlocks = new List<ParsedCheckListBlock>();
+        var index = -1;
+        var currentBlock = new ParsedCheckListBlock();
+
+
+        foreach (var entry in parsedData)
+        {
+            //Increase the index as we cycle through elements
+            index++;
+
+            try
+            {
+                if (PeekFinalToken(parsedData, index))
+                {
+                    if (entry.GetType() != typeof(CheckListHeader))
+                    {
+                        currentBlock.AddFinalItem(entry as CheckListEntry);
+                        parsedBlocks.Add(currentBlock);
+                        currentBlock = new ParsedCheckListBlock();
+                    }
+                    else
+                    {
+                        currentBlock.SetHeader(entry as CheckListHeader);
+                        parsedBlocks.Add(currentBlock);
+                        currentBlock = new ParsedCheckListBlock();
+                    }
+                }else if (entry.GetType() == typeof(CheckListHeader))
+                {
+                    currentBlock.SetHeader(entry as CheckListHeader);
+                }
+                else
+                {
+                    currentBlock.AddItem(entry);
+                }
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                parsedBlocks.Add(currentBlock);
+                return parsedBlocks;
+            }
+        }
+
+        parsedBlocks.Add(currentBlock);
+        return parsedBlocks;
+    }
+
+    /// <summary>
+    /// Checks if the token after the current index is a header. If the token after the current is a header,
+    /// Then the current token is the final token to enter. If the next token is not a header, then the next token is
+    /// simply to be added normally
+    /// </summary>
+    /// <param name="parsedData">The data to be parsed</param>
+    /// <param name="index">the current index</param>
+    /// <returns>Returns true if the next token is a header, indicating the end of this info packet, false if the next
+    /// entry is not a header and thus is part of this info packet.</returns>
+    /// <exception cref="IndexOutOfRangeException"></exception>
+    private bool PeekFinalToken(List<ParsedCheckListItem> parsedData, int index)
+    {
+        if (index+1 >= parsedData.Count) throw new IndexOutOfRangeException("Error index out of data range");
+
+        return parsedData[index + 1].GetType() == typeof(CheckListHeader);
+    }
 }
 
-record ParsedCheckListItem(string FullText);
-record CheckListHeader (string Header, string FullText):ParsedCheckListItem (FullText);
+class ParsedCheckListBlock
+{
+    public string ChecklistSectionName => _header?.Header ?? "None";
+    private CheckListHeader? _header = null;
 
-record CheckListJournal (string JournalTitle, string? Editor, string? Location, string[] OtherInfo,  string FullText):ParsedCheckListItem (FullText);
+    private int index = 0;
+
+    public bool CanAdd { private set; get; } = true;
+
+    public List<CheckListEntry> Entries { get; } = new List<CheckListEntry>();
+
+    public override string ToString()
+    {
+        return $"{ChecklistSectionName}: {Entries.Aggregate("", (h,t) => h += " " + t )}";
+    }
 
 
-record CheckListVolume (string VolumeTitle, string? Date, string? Nos, string[] OtherInfo, string FullText):ParsedCheckListItem (FullText);
+    public bool HasNextEntry()
+    {
+        return index >= Entries.Count;
+    }
+    
+    public CheckListEntry NextEntry()
+    {
+        if(HasNextEntry()){
+        
+            var result = Entries[index];
+            index++;
+        
+            return result;
+        }
+
+        throw new IndexOutOfRangeException("Error out of entries to proceed to");
+    }
+
+    public void SetHeader(CheckListHeader header)
+    {
+        _header ??= header;
+    }
+
+    public void AddItem(ParsedCheckListItem entry)
+    {
+        if (_header == null && entry.GetType() == typeof(CheckListHeader))
+        {
+            _header = (CheckListHeader) entry;
+        }else if (entry.GetType() != typeof(CheckListHeader))
+        {
+            if(CanAdd) AddEntry(entry as CheckListEntry);
+        }
+        
+    }
+
+    private void AddEntry(CheckListEntry entry)
+    {
+        Entries.Add(entry);
+    }
+
+    public void AddFinalItem(CheckListEntry finalEntry)
+    {
+        CanAdd = false;
+        AddEntry(finalEntry);
+    }
+}
+
+record ParsedCheckListItem(string Title, string FullText){}
+
+record CheckListHeader(string Header, string FullText) : ParsedCheckListItem(Header, FullText)
+{
+    public override string ToString()
+    {
+        return Header;
+    }
+};
+
+internal record CheckListEntry(string Title, string FullText) : ParsedCheckListItem(Title, FullText);
+
+internal record CheckListJournal(string JournalTitle, string? Editor, string? Location, string[] OtherInfo,
+    string FullText) : CheckListEntry(JournalTitle, FullText)
+{
+    public override string ToString()
+    {
+        return JournalTitle;
+    }
+};
+
+internal record CheckListVolume
+    (string VolumeTitle, string? Date, string? Nos, string[] OtherInfo, string FullText) : CheckListEntry(VolumeTitle,
+        FullText)
+{
+    public override string ToString()
+    {
+        return VolumeTitle;
+    }
+};
