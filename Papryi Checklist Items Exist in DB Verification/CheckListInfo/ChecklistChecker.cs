@@ -391,10 +391,10 @@ record CheckListHeader(string Header, string FullText) : ParsedCheckListItem(Hea
     }
 };
 
-internal record CheckListEntry(string Title, string FullText) : ParsedCheckListItem(Title, FullText);
+internal record CheckListEntry(string Title, string FullText, string[] OtherData) : ParsedCheckListItem(Title, FullText);
 
 internal record CheckListJournal(string JournalTitle, string? Editor, string? Location, string[] OtherInfo,
-    string FullText) : CheckListEntry(JournalTitle, FullText)
+    string FullText) : CheckListEntry(JournalTitle, FullText, new List<string>{ Editor ?? "", Location ?? "", OtherInfo.Aggregate("", (h,t) => h = h + " " + t)}.ToArray())
 {
     public override string ToString()
     {
@@ -404,7 +404,7 @@ internal record CheckListJournal(string JournalTitle, string? Editor, string? Lo
 
 internal record CheckListVolume
     (string VolumeTitle, string? Date, string? Author, string? Nos, string[] OtherInfo, string FullText) : CheckListEntry(VolumeTitle,
-        FullText)
+        FullText, new List<string>{ Author ?? "",Date ?? "",Nos ?? "", OtherInfo.Aggregate("", (h,t) => h = h + " " + t)}.ToArray())
 {
     public override string ToString()
     {

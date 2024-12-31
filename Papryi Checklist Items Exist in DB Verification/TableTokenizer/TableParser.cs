@@ -59,11 +59,13 @@ class TableParser
                 }
                 else
                 {
+                    //If we haven't started, then the first bit of info is always the bib number.
                     if (CurrentTokenType == TableTokenTypes.None)
                     {
                         CurrentTokenType = TableTokenTypes.BibliographyNumber;
                     }
 
+                    //Build the list of tokens
                     if (nextChar != '\n')
                     {
                         textToken += nextChar;
@@ -74,17 +76,21 @@ class TableParser
             //Set current token type
             if (CurrentTokenType == TableTokenTypes.BibliographyNumber)
             {
+                //If we have a biblio number, the next piece of info is the authors name and the like
                 CurrentTokenType = TableTokenTypes.AuthorInfo;
                 currentMode = CurrentTokenMode.MidToken;
                 if (tokenCollection.CouldAddEntryNumber)
                 {
+                    //Add the number value
                     tokenCollection.AddEntryNumber(textToken);
                 }
             }
             else if (CurrentTokenType == TableTokenTypes.AuthorInfo)
             {
+                //if we're dealing with author, after that comes publisher info, 
                 CurrentTokenType = TableTokenTypes.PublisherInfo;
                 currentMode = CurrentTokenMode.CloseToken;
+                //But first add the author info to our collection
                 tokenCollection.AddTokenToCollection(textToken);
             }
             else if (CurrentTokenType == TableTokenTypes.PublisherInfo)
@@ -113,7 +119,7 @@ class TableParser
 
         var tokenCollection = BasicTokenizer();
         if (Int32.TryParse(tokenCollection.EntryNumber, out var numb))
-            return new BibliographyEntry(tokenCollection.IntermediaryText, numb);
+            return new BibliographyEntry($"{tokenCollection.IntermediaryText} {tokenCollection.PublisherNumber}", numb);
 
         return new BibliographyEntry(tokenCollection.IntermediaryText);
     }

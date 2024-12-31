@@ -30,14 +30,14 @@ class PapyriChecklistInfo
                         var vol = entry as CheckListVolume;
                         var searcher = new PapyriSearcher();
                         searcher.BibliographySearch(p.ChecklistSectionName,
-                            entry.Title, new() {vol.Author});
+                            entry);
                     }
                     else
                     {
                         
                         var searcher = new PapyriSearcher();
                         searcher.BibliographySearch(p.ChecklistSectionName,
-                            entry.Title, new() { });
+                            entry);
                     }
 
 

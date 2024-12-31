@@ -43,7 +43,7 @@ class TableTokenCollection
     public bool CouldAddPublisherEntry => PublisherNumberToken == null || PublisherNumberToken == new TableToken();
     
     /// <summary>
-    /// Try and add an Publisher number token to the token collection.
+    /// Try and add an Publisher info token to the token collection.
     /// </summary>
     /// <param name="number">The number to add</param>
     /// <returns>Will return true if could add successfully, return false is not.</returns>
@@ -52,12 +52,13 @@ class TableTokenCollection
         //If you can not add an entry number, return false because you cant create an entry.
         if (!CouldAddPublisherEntry) return false;
         
+        //TODO figure out why I was making sure it was a number
         //Now make sure the number is a number, if the given value is not a number, return false.
-        if (!Int32.TryParse(publisherInfo, out var numb)) return false;
+        //if (!Int32.TryParse(publisherInfo, out var numb)) return false;
         
         //If it is a number, create a new token
         //Otherwise, you can create the entry:
-        EntryNumberToken = new TableToken(TableTokenTypes.PublisherInfo, publisherInfo);
+        PublisherNumberToken = new TableToken(TableTokenTypes.PublisherInfo, publisherInfo);
         return true;
     }
 

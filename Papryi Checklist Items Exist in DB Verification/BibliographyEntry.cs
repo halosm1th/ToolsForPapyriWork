@@ -11,14 +11,14 @@ class BibliographyEntry
 
     public string Name { get; }
     public int BibliographyNumber { get; }
-    
+
     public BibliographyEntry(string name = "", int bibliographyNumber = -1)
     {
         //A tiny bit of error checking. Basically, if it has nothing, its an empty entry.
         //If it has no number, then the entry wasn't found in the DB. 
         if (name == string.Empty && bibliographyNumber == -1) Empty = true;
-        if (name != string.Empty && bibliographyNumber != -1) HasBibliographyEntry = true; 
-        
+        if (name != string.Empty && bibliographyNumber != -1) HasBibliographyEntry = true;
+
         Name = name;
         BibliographyNumber = bibliographyNumber;
         

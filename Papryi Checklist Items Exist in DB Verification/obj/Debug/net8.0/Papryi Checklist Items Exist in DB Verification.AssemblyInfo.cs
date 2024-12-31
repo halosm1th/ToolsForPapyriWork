@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Papryi Checklist Items Exist in DB Verification")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c17823723942fcef5c154c7e4b4e2ed51a44108")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bee18652d9dae6e80f6a7f82ed8d05a9d0889cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Papryi Checklist Items Exist in DB Verification")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Papryi Checklist Items Exist in DB Verification")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
