@@ -25,11 +25,22 @@ class PapyriChecklistInfo
                     Console.WriteLine($"Searching for: {p.ChecklistSectionName} {entry.Title}");
                     Console.ForegroundColor = ConsoleColor.Gray;
 
-                    var searcher = new PapyriSearcher();
-                    searcher.BibliographySearch(p.ChecklistSectionName,
-                        entry.Title, new() {});
+                    if (entry.GetType() == typeof(CheckListVolume))
+                    {
+                        var vol = entry as CheckListVolume;
+                        var searcher = new PapyriSearcher();
+                        searcher.BibliographySearch(p.ChecklistSectionName,
+                            entry.Title, new() {vol.Author});
+                    }
+                    else
+                    {
+                        
+                        var searcher = new PapyriSearcher();
+                        searcher.BibliographySearch(p.ChecklistSectionName,
+                            entry.Title, new() { });
+                    }
 
-                    
+
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("Press any key to process next entry");
                     Console.ForegroundColor = ConsoleColor.Gray;

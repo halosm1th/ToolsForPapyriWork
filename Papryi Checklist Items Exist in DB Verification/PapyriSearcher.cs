@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using System.Security.Cryptography.X509Certificates;
 using HtmlAgilityPack;
 
 namespace PapyriChecklistItems;
@@ -22,7 +23,7 @@ class PapyriSearcher
         var results = new List<BibliographyEntry>() { };
         for(int i=0; i <titles.Count; i++)
         {
-            var result = BibliographySearch(titles[i], numbers[i], otherDatas[i]);
+            var result = BibliographySearch(titles[i],numbers[i], otherDatas[i]);
             results.Add(result);
         }
 
@@ -56,61 +57,141 @@ class PapyriSearcher
     //Advanced search is basically me massassing various errors I've found over time, trying to figure out how to best
     //make this all work, as such, its essentially the last stop check point offering various strategies, if none work,
     //then the user has to try and find the result themselves.
-    private BibliographyEntry AdvancedSearch(string title, string number, List<string> otherData)
+    private BibliographyEntry? AdvancedSearch(string title, string number, List<string> otherData)
     {
         BibliographyEntry? result = null;
         
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.Write("Trying Titleless Search...");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        result = TitlelessSearch(number);
-        if (result != null) return result;
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.CursorLeft = Console.CursorLeft-2;
-        Console.Write(" Failed to find with titleless search.\n");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.Write("Trying Period Stripped Search...");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        result = PeriodStripSearch(title, number);
-        if (result != null) return result;
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.CursorLeft = Console.CursorLeft-2;
-        Console.Write("Failed to find with period stripped search...\n");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.Write("Trying Comma Stripped Search...");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        result = CommaStripSearch(title, number);
-        if (result != null) return result;
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.CursorLeft = Console.CursorLeft-2;
-        Console.WriteLine("Failed to find with Comma Stripped search...");
-        Console.ForegroundColor = ConsoleColor.Gray;
+        if (TitlelessSearch(number, out result)) return result;
 
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.Write("Trying Comma and Period Stripped Search...");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        result = CommaPeriodStripSearch(title, number);
-        if (result != null) return result;
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.CursorLeft = Console.CursorLeft-2;
-        Console.WriteLine("Failed to find with Command and Period Stripped search...");
-        Console.ForegroundColor = ConsoleColor.Gray;
+        if (PeriodStrippedSearch(title, number, out result)) return result;
+        if (TitleSearchWithAuthor(title, otherData[0], out result)) return result;
 
+        if (CommaPeriodStrippedAuthorAddedSearch(otherData[0], title, number, out result)) return result;
+        if (CommaStrippedSearch(title, number, out result)) return result;
+
+        if (CommaPeriodStrippedSearch(title, number, out result)) return result;
+
+
+        if (NoTitleCommaOrPeriodSearch(number, out result)) return result;
+
+        return new BibliographyEntry($"FAILED TO FIND: {title} {number}");
+    }
+
+    private bool NoTitleCommaOrPeriodSearch(string number, out BibliographyEntry? result)
+    {
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.Write("Trying Titleless Search...");
         Console.ForegroundColor = ConsoleColor.Gray;
         result = CommaPeriodTitleStripSearch(number);
-        if (result != null) return result;
+        if (result != null) return true;
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.CursorLeft = Console.CursorLeft-2;
+        Console.CursorLeft = Console.CursorLeft - 2;
         Console.WriteLine("Failed to find with Comma, Period, and Title Stripped search...");
         Console.ForegroundColor = ConsoleColor.Gray;
+        return false;
+    }
+
+    private bool CommaPeriodStrippedAuthorAddedSearch(string author, string title, string number, out BibliographyEntry? result)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.Write("Trying Comma and Period Stripped, adding Author Search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        result = CommaPeriodAuthorStripSearch(author,title, number);
+        if (result != null) return true;
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.CursorLeft = Console.CursorLeft - 2;
+        Console.WriteLine("Failed to find with Command and Period Stripped plus author search...");
+        Console.WriteLine($"Searched for: {author} {title} {number}");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        return false;
+    }
+
+    private bool CommaPeriodStrippedSearch(string title, string number, out BibliographyEntry? result)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.Write("Trying Comma and Period Stripped Search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        result = CommaPeriodStripSearch(title, number);
+        if (result != null) return true;
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.CursorLeft = Console.CursorLeft - 2;
+        Console.WriteLine("Failed to find with Command and Period Stripped search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        return false;
+    }
+
+    private bool CommaStrippedSearch(string title, string number, out BibliographyEntry? result)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.Write("Trying Comma Stripped Search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        result = CommaStripSearch(title, number);
+        if (result != null)
+        {
+            return true;
+        }
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.CursorLeft = Console.CursorLeft - 2;
+        Console.WriteLine("Failed to find with Comma Stripped search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
         
-        return new BibliographyEntry($"FAILED TO FIND: {title} {number}");
+        return false;
+    }
+
+    private bool PeriodStrippedSearch(string title, string number, out BibliographyEntry? result)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.Write("Trying Period Stripped Search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        result = PeriodStripSearch(title, number);
+        if (result != null)
+        {
+            return true;
+        }
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.CursorLeft = Console.CursorLeft - 2;
+        Console.Write("Failed to find with period stripped search...\n");
+        Console.ForegroundColor = ConsoleColor.Gray;
+
+        return false;
+    }
+    
+    private bool TitleSearchWithAuthor(string title, string author, out BibliographyEntry? result)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.Write($"Trying Number + Author Search... [{title} {author}]");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        result = TitleWithAuthorSearch(title, author);
+        if (result != null)
+        {
+            return true;
+        }
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.CursorLeft = Console.CursorLeft - 2;
+        Console.Write(" Failed to find with titleless search.\n");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        return false;
+    }
+
+    private bool TitlelessSearch(string number, out BibliographyEntry? result)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.Write("Trying Titleless Search...");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        result = TitlelessSearch(number);
+        if (result != null)
+        {
+            return true;
+        }
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.CursorLeft = Console.CursorLeft - 2;
+        Console.Write(" Failed to find with titleless search.\n");
+        Console.ForegroundColor = ConsoleColor.Gray;
+        return false;
     }
 
     private BibliographyEntry? CommaPeriodTitleStripSearch(string number)
@@ -118,6 +199,22 @@ class PapyriSearcher
         var numbSplit = number.Split(',');
         numbSplit = numbSplit[0].Split('.');
         var page = GetSearchPage("", numbSplit[0]);
+
+        if (HasHits(page))
+        {
+            return GetResultFromTable(page);
+        }
+
+        return null;
+    }
+    
+    private BibliographyEntry? CommaPeriodAuthorStripSearch(string author, string title, string number)
+    {
+        var numbSplit = number.Split(',');
+        numbSplit = numbSplit[0].Split('.');
+        ///TODO fix this so it doesn't look like shit
+        //title = author + " " + title;
+        var page = GetSearchPage(title, author);
 
         if (HasHits(page))
         {
@@ -170,6 +267,18 @@ class PapyriSearcher
     private BibliographyEntry? TitlelessSearch(string number)
     {
         var page = GetSearchPage("", number);
+
+        if (HasHits(page))
+        {
+            return GetResultFromTable(page);
+        }
+
+        return null;
+    }
+    
+    private BibliographyEntry? TitleWithAuthorSearch(string title, string author)
+    {
+        var page = GetSearchPage(title, author);
 
         if (HasHits(page))
         {

@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 
 namespace PapyriChecklistItems;
 
@@ -75,10 +76,27 @@ class ChecklistChecker
     private CheckListVolume ParseVolume(string tokenText)
     {
         string[] splitParts;
+        string date = null;
+        string? nos = null;
+        string? author = null;
 
         if (tokenText.Contains(", ed."))
         {
             splitParts = tokenText.Split(", ed.");
+            //Setting author 
+            //W. Schubart. 1919. Online: archive.org. Zweiter Teil: Der Kommentar, by W. Graf von Uxkull-Gyllenband. 1934. No. 1210. [MF 1.5; rp. CG] ddb:bgu;5 Online: archive.org
+            //W. Schubart.
+            var authorPortion = splitParts[1];
+            var authors = Regex.Split(authorPortion,"(18|19|20)[0-9]{2}\\.");
+            if (authors.Length > 0)
+            {
+                var result= authors[0].Split('.');
+
+                result = result.Select(x => x.TrimStart()).ToArray();
+                
+                author = result.First(x => x.Length >= 2);
+            }
+
         }else if (tokenText.Contains("P.") || tokenText.Contains("O.") || tokenText.Contains("BKU") 
                   || tokenText.Contains("CPR") || tokenText.Contains("SB Kopt"))
         {
@@ -92,15 +110,13 @@ class ChecklistChecker
         var volumeTitle = splitParts[0];
 
 
-        string date = null;
-        string? nos = null;
         List<string> other = new List<string>();
         for (int i = 1; i < splitParts.Length; i++)
         {
             other.Add(splitParts[i]);
         }
         
-        return new CheckListVolume(volumeTitle,date,nos,other.ToArray(),tokenText);
+        return new CheckListVolume(volumeTitle,date,author,nos,other.ToArray(),tokenText);
     }
 
     
@@ -387,7 +403,7 @@ internal record CheckListJournal(string JournalTitle, string? Editor, string? Lo
 };
 
 internal record CheckListVolume
-    (string VolumeTitle, string? Date, string? Nos, string[] OtherInfo, string FullText) : CheckListEntry(VolumeTitle,
+    (string VolumeTitle, string? Date, string? Author, string? Nos, string[] OtherInfo, string FullText) : CheckListEntry(VolumeTitle,
         FullText)
 {
     public override string ToString()
