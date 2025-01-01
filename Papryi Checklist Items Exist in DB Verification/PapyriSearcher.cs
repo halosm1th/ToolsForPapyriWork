@@ -9,6 +9,7 @@ namespace Papryi_Checklist_Items_Exist_in_DB_Verification;
 /// </summary>
 class PapyriSearcher
 {
+    private const int AG_MIN = 0;
     private const string SearchUrl = "https://papyri.info/bibliosearch?q=";
     private bool _fullPrint;
 
@@ -34,14 +35,21 @@ class PapyriSearcher
             }
 
             var results = GetResultsFromTable(page);
+            (int count, BibliographyEntry? entry) res = new (AG_MIN, null);
             foreach (var result in results)
             {
                 var cor = CorrectResult(result, searchItem.Title, searchItem.OtherData[0]);
                 var ag = cor.Aggregate(0, (h, t) => t ? h + 1 : h);
-                if (ag > 0)
+                if (ag > res.count)
                 {
-                    return result;
+                    res.count = ag;
+                    res.entry = result;
                 }
+            }
+
+            if (res.count > AG_MIN && res.entry != null)
+            {
+                return res.entry;
             }
 
             if (_fullPrint)
@@ -270,7 +278,7 @@ class PapyriSearcher
     private bool CorrectResults(List<BibliographyEntry> results, string papyriNameAndNumber, string author,
         out BibliographyEntry? retVal)
     {
-        (int successRate,  BibliographyEntry? result) strongestResult = new (-1, null);
+        (int successRate,  BibliographyEntry? result) strongestResult = new (AG_MIN, null);
         foreach (var result in results)
         {
             var corrected = CorrectResult(result, papyriNameAndNumber, author);
@@ -283,7 +291,7 @@ class PapyriSearcher
         }
 
         retVal = strongestResult.result;
-        return strongestResult.successRate > 1;
+        return strongestResult.successRate > AG_MIN;
     }
 
     private List<bool> CorrectResult(BibliographyEntry result, string papyriNameAndNumber, string author)
