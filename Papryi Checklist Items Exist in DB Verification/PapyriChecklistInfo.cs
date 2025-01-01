@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using HtmlAgilityPack;
+using Papryi_Checklist_Items_Exist_in_DB_Verification;
 
 namespace PapyriChecklistItems;
 using System.Net;
@@ -14,45 +15,68 @@ class PapyriChecklistInfo
         var result = checkListParser.ParseTokenizedCheckList();
         var parsed = checkListParser.StructureParsedData(result);
         
-        
+        ParseResults(parsed);
+    }
+
+    private static void ParseResults(List<ParsedCheckListBlock> parsed, bool fullText = false)
+    {
+        BibliographyEntry finalResult;
         foreach (var p in parsed)
         {
             if (p.Entries.Count > 1)
             {
-                foreach (var entry in p.Entries.Where(x => x.GetType() == typeof(CheckListVolume)))
+                foreach (var entry in p.Entries.Where(x => x is CheckListVolume))
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"Searching for: {p.ChecklistSectionName} {entry.Title}");
+                    Console.Write($"\nSearching for: {p.ChecklistSectionName} {entry.Title}");
                     Console.ForegroundColor = ConsoleColor.Gray;
 
-                    if (entry.GetType() == typeof(CheckListVolume))
+                    var searcher = new PapyriSearcher();
+                    finalResult = searcher.BibliographySearch(p.ChecklistSectionName,
+                        entry, fullText);
+
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    var oldColour = Console.BackgroundColor;
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine($"\nBest result is: {finalResult}");
+
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("\nPress any key to process next entry. Press r or f to rerun and print all info");
+                    Console.BackgroundColor = oldColour;
+                    var key = Console.ReadKey();
+                    if (key.KeyChar.ToString().ToLower() == "r" || key.KeyChar.ToString().ToLower() == "f")
                     {
-                        var vol = entry as CheckListVolume;
-                        var searcher = new PapyriSearcher();
-                        searcher.BibliographySearch(p.ChecklistSectionName,
-                            entry);
+                        ParseResults(parsed, true);
                     }
-                    else
-                    {
-                        
-                        var searcher = new PapyriSearcher();
-                        searcher.BibliographySearch(p.ChecklistSectionName,
-                            entry);
-                    }
-
-
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Press any key to process next entry");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.ReadKey();
-
                 }
             }
             else
             {
-                
+                var entry = p.Entries.First();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"\nSearching for: {p.ChecklistSectionName} {entry.Title}");
+                Console.ForegroundColor = ConsoleColor.Gray;
+
+                var searcher = new PapyriSearcher();
+                finalResult = searcher.BibliographySearch(p.ChecklistSectionName,
+                    entry);
+
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                var oldColour = Console.BackgroundColor;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine($"\nBest result is: {finalResult}");
+
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("\nPress any key to process next entry. Press r or f to rerun and print all info");
+                Console.BackgroundColor = oldColour;
+                var key = Console.ReadKey();
+                if (key.KeyChar.ToString().ToLower() == "r" || key.KeyChar.ToString().ToLower() == "f")
+                {
+                    ParseResults(parsed, true);
+                }
             }
         }
-
     }
 }
