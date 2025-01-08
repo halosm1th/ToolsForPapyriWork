@@ -22,7 +22,7 @@ class PapyriSearcher
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write($"Starting Basic Search... ");
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ResetColor();
         }
 
         if (HasHits(page))
@@ -31,7 +31,7 @@ class PapyriSearcher
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Hit found, getting and testing result.");
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ResetColor();
             }
 
             var results = GetResultsFromTable(page);
@@ -56,7 +56,7 @@ class PapyriSearcher
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("Failed on base search.\nAttempting Advanced Search...\n");
-                Console.ForegroundColor = ConsoleColor.Gray;
+               Console.ResetColor();
             }
         }
         else
@@ -65,7 +65,7 @@ class PapyriSearcher
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("No hits on base search.\nAttempting Advanced Search...\n");
-                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ResetColor();
             }
         }
 
@@ -91,7 +91,7 @@ class PapyriSearcher
          can do and the fun one can have with chaining them. This is not good code.
         return result.Name.Contains(titleOfPapyri) ? true :
             yearTry.Success && result.Name.Contains(yearTry.Value) ? true :
-            result.Name.Contains(author); 
+            result.Name.Contains(author);
         */
 
         var titleTest = result.Name.Contains(titleOfPapyri);
@@ -135,26 +135,22 @@ class PapyriSearcher
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
-        
+
         var authorTry = result.Name.Contains(author);
         results.Add(authorTry);
-        if (authorTry)
+        if (_fullPrint)
         {
-            if (_fullPrint)
+            if (authorTry)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($"\tResult matched with author {author} successfully.");
-                Console.ForegroundColor = ConsoleColor.Gray;
             }
-        }
-        else
-        {
-            if (_fullPrint)
+            else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine($"\t\tFailed to match with author {author}. Trying Comma Stripped title next.");
-                Console.ForegroundColor = ConsoleColor.Gray;
             }
+            Console.ResetColor();
         }
 
         var commaStrippedTitle = titleOfPapyri.Split(',');
@@ -234,7 +230,7 @@ class PapyriSearcher
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
-        
+
         if (_fullPrint)
             {
                 Console.BackgroundColor = ConsoleColor.DarkRed;
@@ -251,43 +247,39 @@ class PapyriSearcher
     //then the user has to try and find the result themselves.
     private BibliographyEntry? AdvancedSearch(string title, string papyriNameAndNumber, string[] otherData)
     {
-        var results = GetTitlelessSearchResult(papyriNameAndNumber);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out var result)) return result;
+        var searchFunctions = new Func<string, string, List<BibliographyEntry>?>[]
+        {
+            (t, p) => GetTitlelessSearchResult(p),
+            PeriodStrippedSearch,
+            (t, p) => TitleSearchWithAuthor(t, otherData[0]),
+            (t, p) => CommaPeriodStrippedAuthorAddedSearch(otherData[0], t, p),
+            CommaStrippedSearch,
+            CommaPeriodStrippedSearch,
+            (t, p) => NoTitleCommaOrPeriodSearch(p)
+        };
 
-        results = PeriodStrippedSearch(title, papyriNameAndNumber);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out result)) return result;
+        foreach (var searchFunction in searchFunctions)
+        {
+            var results = searchFunction(title, papyriNameAndNumber);
+            if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out var result))
+            {
+                return result;
+            }
+        }
 
-        results = TitleSearchWithAuthor(title, otherData[0]);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out result)) return result;
-
-        results = CommaPeriodStrippedAuthorAddedSearch(otherData[0], title, papyriNameAndNumber);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out result)) return result;
-
-        results = CommaStrippedSearch(title, papyriNameAndNumber);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out result)) return result;
-
-        results = CommaPeriodStrippedSearch(title, papyriNameAndNumber);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out result)) return result;
-
-        results = NoTitleCommaOrPeriodSearch(papyriNameAndNumber);
-        if (results != null && CorrectResults(results, papyriNameAndNumber, otherData[0], out result)) return result;
-
-        return new BibliographyEntry($"FAILED TO FIND: {title} {papyriNameAndNumber}");
+    return new BibliographyEntry($"FAILED TO FIND: {title} {papyriNameAndNumber}");
     }
 
     private bool CorrectResults(List<BibliographyEntry> results, string papyriNameAndNumber, string author,
         out BibliographyEntry? retVal)
     {
-        (int successRate,  BibliographyEntry? result) strongestResult = new (AG_MIN, null);
+        var strongestResult = (successRate: AG_MIN, result: (BibliographyEntry?)null);
         foreach (var result in results)
         {
             var corrected = CorrectResult(result, papyriNameAndNumber, author);
-            var ag = corrected.Aggregate(0, (h, t) => t ? h++ : h);
+            var ag = corrected.Aggregate(0, (h, t) => t ? h + 1 : h);
             if (ag > strongestResult.successRate)
-            {
-                strongestResult.result = result;
-                strongestResult.successRate = ag;
-            }
+            { strongestResult = (ag, result); }
         }
 
         retVal = strongestResult.result;

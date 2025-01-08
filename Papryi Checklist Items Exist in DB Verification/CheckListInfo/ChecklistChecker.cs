@@ -9,12 +9,11 @@ namespace PapyriChecklistItems;
 class ChecklistChecker
 {
 
-    
+
     private string filePath;
     private string[] CheckListLines;
     private List<CheckListToken> TokenList;
-    
-    
+
     public ChecklistChecker(string checklistLocation = "/checklist.md")
     {
         filePath = Directory.GetCurrentDirectory() + checklistLocation;
@@ -40,7 +39,7 @@ class ChecklistChecker
     public List<ParsedCheckListItem> ParseTokenizedCheckList()
     {
         var parsedTokens = new List<ParsedCheckListItem>();
-        
+
         foreach (var token in TokenList)
         {
             if (token.TokenType == ChecklistTokenType.Header)
@@ -93,7 +92,7 @@ class ChecklistChecker
                 var result= authors[0].Split('.');
 
                 result = result.Select(x => x.TrimStart()).ToArray();
-                
+
                 author = result.First(x => x.Length >= 2);
             }
 
