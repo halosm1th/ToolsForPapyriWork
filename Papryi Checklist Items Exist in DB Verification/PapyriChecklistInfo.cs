@@ -14,7 +14,7 @@ class PapyriChecklistInfo
         checkListParser.TokenizeCheckList();
         var result = checkListParser.ParseTokenizedCheckList();
         var parsed = checkListParser.StructureParsedData(result);
-        
+
         ParseResults(parsed);
     }
 

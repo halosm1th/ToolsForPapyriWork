@@ -21,7 +21,7 @@ class BibliographyEntry
 
         Name = name;
         BibliographyNumber = bibliographyNumber;
-        
+
     }
 
     public override string ToString()
