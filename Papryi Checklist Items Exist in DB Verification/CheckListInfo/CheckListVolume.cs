@@ -1,11 +1,23 @@
-﻿namespace PapyriChecklistItems;
+﻿using PapyriChecklistItems;
 
-internal record CheckListVolume
-    (string VolumeTitle, string? Date, string? Author, string? Nos, string[] OtherInfo, string FullText) : CheckListEntry(VolumeTitle,
-        FullText, new List<string>{ Author ?? "",Date ?? "",Nos ?? "", OtherInfo.Aggregate("", (h,t) => h = h + " " + t)}.ToArray())
+public class CheckListVolume : ParsedCheckListItem
 {
-    public override string ToString()
+    public string Title { get; }
+    public string? Date { get; }
+    public string? Author { get; }
+    public string? Nos { get; }
+    public string[] RawParts { get; }
+    public string FullText { get; }
+    public List<string> TitleVariations { get; }
+
+    public CheckListVolume(string title, string? date, string? author, string? nos, string[] rawParts, string fullText, List<string> titleVariations) : base(title,fullText)
     {
-        return VolumeTitle;
+        Title = title;
+        Date = date;
+        Author = author;
+        Nos = nos;
+        RawParts = rawParts;
+        FullText = fullText;
+        TitleVariations = titleVariations;
     }
-};
+}

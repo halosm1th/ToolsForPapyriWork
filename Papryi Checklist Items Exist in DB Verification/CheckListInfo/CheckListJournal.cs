@@ -1,10 +1,20 @@
-﻿namespace PapyriChecklistItems;
+﻿using PapyriChecklistItems;
 
-internal record CheckListJournal(string JournalTitle, string? Editor, string? Location, string[] OtherInfo,
-    string FullText) : CheckListEntry(JournalTitle, FullText, new List<string>{ Editor ?? "", Location ?? "", OtherInfo.Aggregate("", (h,t) => h = h + " " + t)}.ToArray())
+public class CheckListJournal : ParsedCheckListItem
 {
-    public override string ToString()
+    public string Title { get; }
+    public string? Editor { get; }
+    public string? Date { get; }
+    public string[] RawParts { get; }
+    public string FullText { get; }
+
+    public CheckListJournal(string title, string? editor, string? date, string[] rawParts, string fullText)
+    : base(title, fullText)
     {
-        return JournalTitle;
+        Title = title;
+        Editor = editor;
+        Date = date;
+        RawParts = rawParts;
+        FullText = fullText;
     }
-};
+}

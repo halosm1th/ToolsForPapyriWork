@@ -1,9 +1,13 @@
-﻿namespace PapyriChecklistItems;
+﻿using PapyriChecklistItems;
 
-record CheckListHeader(string Header, string FullText) : ParsedCheckListItem(Header, FullText)
+public class CheckListHeader : ParsedCheckListItem
 {
-    public override string ToString()
+    public string HeaderText { get; }
+    public string RawText { get; }
+
+    public CheckListHeader(string headerText, string rawText) : base(headerText, rawText)
     {
-        return Header;
+        HeaderText = headerText;
+        RawText = rawText;
     }
-};
+}

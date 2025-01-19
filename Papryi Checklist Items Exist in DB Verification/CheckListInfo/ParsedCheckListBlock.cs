@@ -2,51 +2,50 @@
 
 class ParsedCheckListBlock
 {
-    public string ChecklistSectionName => _header?.Header ?? "None";
-    private CheckListHeader? _header = null;
+    public string ChecklistSectionName => Header?.HeaderText ?? "None";
+    public CheckListHeader? Header { get; private set; } = null;
 
     private int index = 0;
 
     public bool CanAdd { private set; get; } = true;
 
-    public List<CheckListEntry> Entries { get; } = new List<CheckListEntry>();
+    public List<ParsedCheckListItem> Entries { get; set; } = new List<ParsedCheckListItem>();
 
     public override string ToString()
     {
-        return $"{ChecklistSectionName}: {Entries.Aggregate("", (h,t) => h += " " + t )}";
+        string headerText = Header != null ? $"Header: {Header.HeaderText}\n" : "No Header\n";
+        string entriesText = Entries.Aggregate("", (current, entry) => current + entry.ToString() + "\n");
+        return headerText + entriesText;
     }
-
 
     public bool HasNextEntry()
     {
-        return index >= Entries.Count;
+        return index < Entries.Count;
     }
 
     public void SetHeader(CheckListHeader header)
     {
-        _header ??= header;
-    }
-
-    public void AddItem(ParsedCheckListItem entry)
-    {
-        if (_header == null && entry.GetType() == typeof(CheckListHeader))
+        if (Header == null)
         {
-            _header = (CheckListHeader) entry;
-        }else if (entry.GetType() != typeof(CheckListHeader))
-        {
-            if(CanAdd) AddEntry(entry as CheckListEntry);
+            Header = header;
         }
-        
     }
 
-    private void AddEntry(CheckListEntry entry)
+    public void AddItem(ParsedCheckListItem item)
     {
-        Entries.Add(entry);
+        if (Header == null && item is CheckListHeader header)
+        {
+            Header = header;
+        }
+        else if (item is CheckListEntry entry)
+        {
+            if (CanAdd) Entries.Add(entry);
+        }
     }
 
     public void AddFinalItem(CheckListEntry finalEntry)
     {
         CanAdd = false;
-        AddEntry(finalEntry);
+        Entries.Add(finalEntry);
     }
 }

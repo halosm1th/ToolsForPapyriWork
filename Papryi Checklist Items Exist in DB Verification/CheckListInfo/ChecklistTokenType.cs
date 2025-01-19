@@ -1,10 +1,8 @@
-﻿namespace PapyriChecklistItems;
-
-public enum ChecklistTokenType
+﻿public enum ChecklistTokenType
 {
-    Other,
-    Appendix,
     Header,
     Journal,
-    Volume
+    Volume,
+    Appendix,
+    Other
 }
