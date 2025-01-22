@@ -35,6 +35,12 @@ class ParsedCheckListBlock
         }else if (entry.GetType() != typeof(CheckListHeader))
         {
             if(CanAdd) AddEntry(entry as CheckListEntry);
+        }else if (entry.GetType() == typeof(CheckListJournal))
+        {
+            if(CanAdd) AddEntry(entry as CheckListEntry);
+        }else if (entry.GetType() == typeof(CheckListVolume))
+        {
+            if (CanAdd) AddEntry(entry as CheckListEntry);
         }
         
     }

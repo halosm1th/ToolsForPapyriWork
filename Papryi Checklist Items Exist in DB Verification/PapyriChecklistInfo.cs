@@ -23,7 +23,7 @@ class PapyriChecklistInfo
         BibliographyEntry finalResult;
         foreach (var p in parsed)
         {
-            if (p.Entries.Count > 1)
+            if (p.Entries.Count > 1 && p.Entries != null)
             {
                 foreach (var entry in p.Entries.Where(x => x is CheckListVolume))
                 {
