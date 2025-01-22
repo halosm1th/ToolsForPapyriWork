@@ -11,7 +11,10 @@ class ChecklistChecker
     public ChecklistChecker(string checklistLocation = "/checklist.md")
     {
         filePath = Directory.GetCurrentDirectory() + checklistLocation;
-        CheckListLines = File.ReadAllLines(filePath);
+        var temp = File.ReadAllText(filePath);
+        temp = temp.Split("## <a id=\"Papyri\">Papyri</a>")[1];
+        
+        CheckListLines = temp.Split('\n');
     }
 
     private int GetPapyriInfoIndex()
@@ -110,6 +113,7 @@ class ChecklistChecker
     private CheckListToken DetermineLineType(int index)
     {
         var line = CheckListLines[index].Trim();
+        line = line.Replace("_", "");
 
         if (line.StartsWith("####") || line.StartsWith("#####"))
             return new CheckListToken(ChecklistTokenType.Other, line);
@@ -118,28 +122,32 @@ class ChecklistChecker
         if (line.StartsWith("###"))
             return new CheckListToken(ChecklistTokenType.Header, line[4..]);
         if (line.StartsWith("="))
-            return new CheckListToken(ChecklistTokenType.Journal, line[4..]);
+            return new CheckListToken(ChecklistTokenType.Journal, line[2..]);
         if (line.StartsWith("*"))
-            return new CheckListToken(ChecklistTokenType.Volume, line[3..]);
+            return new CheckListToken(ChecklistTokenType.Volume, line[2..]);
 
         return new CheckListToken(ChecklistTokenType.Other, line);
     }
 
     private string ExtractTitle(string text)
     {
-        var match = Regex.Match(text, "_(.*?)_");
-        return match.Success ? match.Groups[1].Value : text.Split(',')[0].Trim();
+        // Regex to match the title pattern before the first period, including commas and other parts of the title.
+        var match = Regex.Match(text, @"^(.*?)(?=\s*,\s*ed\.)");
+    
+        // Return the matched title or the first part before the comma or period
+        return match.Success ? match.Groups[1].Value.Trim() : text.Split(',')[0].Trim();
     }
 
     private string? ExtractAuthor(string text)
     {
-        var match = Regex.Match(text, "ed\\.\\s([^,\\.]+)");
+        // Adjusted to handle names with initials and surnames correctly
+        var match = Regex.Match(text, "ed\\.\\s(([A-Z]\\.){1,2}\\s?[A-Z][a-z]+)");
         return match.Success ? match.Groups[1].Value.Trim() : null;
     }
 
     private string? ExtractDate(string text)
     {
-        var match = Regex.Match(text, "\b(\\d{4})\b");
+        var match = Regex.Match(text, "\\b(\\d{4})\\b");
         return match.Success ? match.Value : null;
     }
 

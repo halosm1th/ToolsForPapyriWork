@@ -10,16 +10,24 @@ class BibliographyEntry
     public bool HasBibliographyEntry { get; } = false;
 
     public string Name { get; }
-    public int BibliographyNumber { get; }
+    public string Author { get; }
+    public string Title { get; }
+    public string PublicationDate { get; }
 
-    public BibliographyEntry(string name = "", int bibliographyNumber = -1)
+    public string BibliographyNumber { get; }
+
+    public BibliographyEntry(string author = "", string title = "", 
+        string publicationDate = "",string bibliographyNumber = "")
     {
         //A tiny bit of error checking. Basically, if it has nothing, its an empty entry.
         //If it has no number, then the entry wasn't found in the DB. 
-        if (name == string.Empty && bibliographyNumber == -1) Empty = true;
-        if (name != string.Empty && bibliographyNumber != -1) HasBibliographyEntry = true;
+        if (title == string.Empty && bibliographyNumber == "") Empty = true;
+        if (title != string.Empty && bibliographyNumber != "") HasBibliographyEntry = true;
 
-        Name = name;
+        Name = title;
+        Title = title;
+        PublicationDate = publicationDate;
+        Author = author;
         BibliographyNumber = bibliographyNumber;
 
     }
@@ -28,6 +36,6 @@ class BibliographyEntry
     {
         if (Empty) return "Empty Record";
         if (!HasBibliographyEntry) return $"No bibliography number found for: {Name}";
-        return $"{BibliographyNumber} {Name}";
+        return $"{BibliographyNumber} {Name} by {Author} published: {PublicationDate}";
     }
 }

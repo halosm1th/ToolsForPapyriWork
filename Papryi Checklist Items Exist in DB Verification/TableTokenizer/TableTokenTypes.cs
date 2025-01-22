@@ -6,4 +6,5 @@ enum TableTokenTypes
     BibliographyNumber,
     AuthorInfo,
     PublisherInfo,
+    Title,
 }

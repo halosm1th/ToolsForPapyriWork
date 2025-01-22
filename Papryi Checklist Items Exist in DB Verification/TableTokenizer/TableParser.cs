@@ -1,15 +1,9 @@
-﻿namespace PapyriChecklistItems;
+﻿using System.Text.RegularExpressions;
+
+namespace PapyriChecklistItems;
 
 class TableParser
 {
-
-    //example entries to parse
-    // 1. 48130. Ulrich Wilcken, Actenstücke aus der königlichen Bank zu Theben in den Museen von Berlin, London, Paris., (London 1886). 
-    // 2. 95040. U. Wilcken , P. Viereck , and Fr. Krebs eds., Griechische Urkunden 1, (Berlin 1895). 
-    // 3. 95047. Wilhelm Schubart and Ernst Kühn, Papyri und Ostraka der Ptolemäerzeit, (Berlin 1922). 
-    // First each result has a number at the start. That can be counted on for every entry.
-    //The middle section, until the parathetical, is the author info. the parenthetical is publisher info
-    
     private string TextToParse = "";
     private int TextCounter = 0;
     private TableTokenTypes CurrentTokenType = TableTokenTypes.None;
@@ -26,9 +20,16 @@ class TableParser
 
     private char NextChar()
     {
-        var retChar = TextToParse[TextCounter];
-        TextCounter++;
-        return retChar;
+        if (TextCounter + 1 < TextToParse.Length)
+        {
+            var retChar = TextToParse[TextCounter];
+            TextCounter++;
+            return retChar;
+        }
+        else
+        {
+            return (char) 0;
+        }
     }
 
     enum CurrentTokenMode
@@ -66,7 +67,7 @@ class TableParser
                     }
 
                     //Build the list of tokens
-                    if (nextChar != '\n')
+                    if (nextChar != '\n' && nextChar != '\0')
                     {
                         textToken += nextChar;
                     }
@@ -87,40 +88,67 @@ class TableParser
             }
             else if (CurrentTokenType == TableTokenTypes.AuthorInfo)
             {
-                //if we're dealing with author, after that comes publisher info, 
+                //if we're dealing with author, after that comes title
+                CurrentTokenType = TableTokenTypes.Title;
+                currentMode = CurrentTokenMode.MidToken;
+                tokenCollection.Author = textToken.Trim();
+            }
+            else if (CurrentTokenType == TableTokenTypes.Title)
+            {
+                //if we're dealing with title, after that comes publisher info
                 CurrentTokenType = TableTokenTypes.PublisherInfo;
                 currentMode = CurrentTokenMode.CloseToken;
-                //But first add the author info to our collection
-                tokenCollection.AddTokenToCollection(textToken);
+                tokenCollection.Title = textToken.Trim();
             }
             else if (CurrentTokenType == TableTokenTypes.PublisherInfo)
             {
                 CurrentTokenType = TableTokenTypes.None;
                 currentMode = CurrentTokenMode.EndOfText;
-                if (tokenCollection.CouldAddPublisherEntry) tokenCollection.AddPublisherNumber(textToken);
+                ExtractPublicationInfo(tokenCollection, textToken.Trim());
             }
         }
-        
+
         return tokenCollection;
+    }
+
+    private void ExtractPublicationInfo(TableTokenCollection tokenCollection, string publicationInfo)
+    {
+        // Extract location and date from publication info
+        var match = Regex.Match(publicationInfo, "(\\d{4})");
+        if (match.Success)
+        {
+            //tokenCollection.PublicationLocation = match.Groups[1].Value.Trim();
+            tokenCollection.PublicationDate = match.Groups[1].Value.Trim();
+        }
+        else
+        {
+            tokenCollection.PublicationLocation = publicationInfo;
+        }
     }
 
     private bool EndOfToken(char next)
     {
         //This is the end case for at least one token
         if (CurrentTokenType == TableTokenTypes.BibliographyNumber && next == '.') return true;
-        if (CurrentTokenType == TableTokenTypes.PublisherInfo &&  next == ')') return true;
-        if (CurrentTokenType == TableTokenTypes.AuthorInfo && next == '(') return true;
+        if (CurrentTokenType == TableTokenTypes.AuthorInfo && next == ',') return true;
+        if (CurrentTokenType == TableTokenTypes.Title && next == '(') return true;
+        if (CurrentTokenType == TableTokenTypes.PublisherInfo && next == ')') return true;
+        if (next == '\0') return true;
         return false;
     }
-    
+
     public BibliographyEntry Parse(string tableEntry)
     {
         TextToParse = tableEntry;
+        TextCounter = 0;
+        CurrentTokenType = TableTokenTypes.None;
 
         var tokenCollection = BasicTokenizer();
-        if (Int32.TryParse(tokenCollection.EntryNumber, out var numb))
-            return new BibliographyEntry($"{tokenCollection.IntermediaryText} {tokenCollection.PublisherNumber}", numb);
-
-        return new BibliographyEntry(tokenCollection.IntermediaryText);
+        return new BibliographyEntry(
+            tokenCollection.Author,
+            tokenCollection.Title,
+            tokenCollection.PublicationDate,
+            tokenCollection.EntryNumber
+        );
     }
 }

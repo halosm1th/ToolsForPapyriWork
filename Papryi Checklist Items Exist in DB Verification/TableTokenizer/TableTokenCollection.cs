@@ -4,6 +4,12 @@ namespace PapyriChecklistItems;
 
 class TableTokenCollection
 {
+    
+    public string Author { get; set; } = "";
+    public string Title { get; set; } = "";
+    public string PublicationLocation { get; set; } = "";
+    public string PublicationDate { get; set; } = "";
+
     public TableToken EntryNumberToken { get; private set; } = new TableToken();
     public TableToken PublisherNumberToken { get; private set; } = new TableToken();
     public List<TableToken> IntermediaryTokens { get; } = new List<TableToken>();
