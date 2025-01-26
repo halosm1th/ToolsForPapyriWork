@@ -148,7 +148,8 @@ class TableParser
             tokenCollection.Author,
             tokenCollection.Title,
             tokenCollection.PublicationDate,
-            tokenCollection.EntryNumber
+            tokenCollection.EntryNumber,
+            tokenCollection.IntermediaryText
         );
     }
 }

@@ -12,12 +12,13 @@ class BibliographyEntry
     public string Name { get; }
     public string Author { get; }
     public string Title { get; }
+    public string FullText { get; }
     public string PublicationDate { get; }
 
     public string BibliographyNumber { get; }
 
     public BibliographyEntry(string author = "", string title = "", 
-        string publicationDate = "",string bibliographyNumber = "")
+        string publicationDate = "",string bibliographyNumber = "", string fullText = "")
     {
         //A tiny bit of error checking. Basically, if it has nothing, its an empty entry.
         //If it has no number, then the entry wasn't found in the DB. 
@@ -29,7 +30,7 @@ class BibliographyEntry
         PublicationDate = publicationDate;
         Author = author;
         BibliographyNumber = bibliographyNumber;
-
+        FullText = fullText;
     }
 
     public override string ToString()

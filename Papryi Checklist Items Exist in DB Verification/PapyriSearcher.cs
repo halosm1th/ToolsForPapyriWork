@@ -31,6 +31,8 @@ class PapyriSearcher
 
         BibliographyEntry? mostCorrectResult = null;
         int highestScore = AG_MIN;
+        int sameResult = 0;
+        const int MAX_SAME_RESULt = 10;
 
         foreach (var strategy in searchStrategies)
         {
@@ -40,11 +42,19 @@ class PapyriSearcher
                 foreach (var result in results)
                 {
                     var currentScore = EvaluateMatch(result, strategy.Title, strategy.Author, strategy.Year);
+                    
+                    //If the result matches the most correct result, that means its more likely the most correct result,
+                    //hopefully?
+                    if (result.BibliographyNumber == mostCorrectResult?.BibliographyNumber) sameResult++;
+                    if (sameResult == MAX_SAME_RESULt) highestScore++;
+                    
                     if (currentScore > highestScore)
                     {
                         highestScore = currentScore;
                         mostCorrectResult = result;
                     }
+                    
+                    
                 }
             }
         }
@@ -68,7 +78,7 @@ class PapyriSearcher
             Console.ResetColor();
         }
 
-        return new BibliographyEntry($"FAILED TO FIND: {title}");
+        return new BibliographyEntry("",$"FAILED TO FIND: {title}");
     }
 
     private List<(string Title, string? Source, string? Author, string? Year)> GenerateSearchStrategies(string source, List<string> titles, string? author, string? year)
@@ -201,7 +211,7 @@ class PapyriSearcher
         // Author match (case-insensitive)
         if (!string.IsNullOrEmpty(author) && result.Author.Contains(author, StringComparison.OrdinalIgnoreCase))
         {
-            score += 4; // Author match score
+            score += 5; // Author match score
         }
         else
         {
@@ -216,7 +226,7 @@ class PapyriSearcher
         // Year match
         if (!string.IsNullOrEmpty(year) && result.PublicationDate == year)
         {
-            score += 3; // Year match score
+            score += 6; // Year match score
         }
 
         return score;
@@ -240,6 +250,15 @@ class PapyriSearcher
     {
         var matchPercentage = CalculateMatchPercentage(resultTitle, targetTitle);
 
+        // Scale the score from 1 to 4
+        if (matchPercentage >= 0.75)
+            return 4; // High partial match
+        if (matchPercentage >= 0.50)
+            return 3; // Moderate partial match
+        if (matchPercentage >= 0.25)
+            return 2; // Low partial match
+        return 1; // Minimal partial match
+        
         // Scale the score from 1 to 3
         if (matchPercentage >= 0.66)
             return 3; // Moderate partial match
