@@ -31,7 +31,9 @@ class PapyriSearcher
 
         BibliographyEntry? mostCorrectResult = null;
         int highestScore = AG_MIN;
-
+        const int KEEP_SCORE = 20;
+        int same = 0;
+        
         foreach (var strategy in searchStrategies)
         {
             var results = PerformSearch(strategy.Title, strategy.Source, strategy.Author, strategy.Year);
@@ -40,9 +42,18 @@ class PapyriSearcher
                 foreach (var result in results)
                 {
                     var currentScore = EvaluateMatch(result, strategy.Title, strategy.Author, strategy.Year);
+                    if (result.BibliographyNumber == mostCorrectResult?.BibliographyNumber) same++;
+                    if (same == KEEP_SCORE)
+                    {
+                        highestScore++;
+                        same = 0;
+                    }
+                    
+                    
                     if (currentScore > highestScore)
                     {
                         highestScore = currentScore;
+                        same = 0;
                         mostCorrectResult = result;
                     }
                 }
@@ -216,7 +227,7 @@ class PapyriSearcher
         // Year match
         if (!string.IsNullOrEmpty(year) && result.PublicationDate == year)
         {
-            score += 3; // Year match score
+            score += 10; // Year match score
         }
 
         return score;

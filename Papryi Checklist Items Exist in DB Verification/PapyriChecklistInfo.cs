@@ -44,7 +44,7 @@ class PapyriChecklistInfo
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("\nPress any key to process next entry. Press r or f to rerun and print all info");
                     Console.BackgroundColor = oldColour;
-                    var key = Console.ReadKey();
+                    var key = new ConsoleKeyInfo(); //Console.ReadKey();
                     if (key.KeyChar.ToString().ToLower() == "r" || key.KeyChar.ToString().ToLower() == "f")
                     {
                         ParseResults(parsed, true);
