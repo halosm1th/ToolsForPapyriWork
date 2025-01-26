@@ -9,6 +9,7 @@ class TableTokenCollection
     public string Title { get; set; } = "";
     public string PublicationLocation { get; set; } = "";
     public string PublicationDate { get; set; } = "";
+    public string BaseText = "";
 
     public TableToken EntryNumberToken { get; private set; } = new TableToken();
     public TableToken PublisherNumberToken { get; private set; } = new TableToken();
