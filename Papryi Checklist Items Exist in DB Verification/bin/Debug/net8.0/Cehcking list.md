@@ -1,22 +1,3 @@
-# Checklist of Editions of Greek, Latin, Demotic, and Coptic Papyri, Ostraca, and Tablets
-##### Founding Editors: John F. Oates and William H. Willis
-
-This new instance of the Checklist is a work in progress. Most of the data already supersede those of the [previous site](http://library.duke.edu/rubenstein/scriptorium/papyrus/texts/clist.html). Previous print and online editions were curated by a board of Editors, founded by the late Professors John F. Oates and William H. Willis. This latest carries forward the spirit of openness and collaboration that they championed. Abbreviations are arrived at after discussion by a variety of stakeholders, including Joshua D. Sosin (Duke), Rodney Ast (Heidelberg), Roger S. Bagnall (NYU), James M.S. Cowey (Heidelberg), Mark Depauw (Leuven), Alain Delattre (Brussels), Robert L. Maxwell (BYU), Paul Heilporn (Strasbourg), volume editors, and others, sometimes including the wider papyrological community (via [papylist](http://lists.hum.ku.dk/cgi-bin/mailman/listinfo/papy)). The quickest way to initiate discussion of updates and abbreviations is to write the papylist, or any one of the individuals named above. Editors are strongly urged to let us know when new volumes are published. Links to digitized volumes available online have been made by Ryan Baumann (Duke), with the help of [a list](https://www.college-de-france.fr/media/culture-ecrite-antiquite-papyrologie-byzantine/UPL1136838564638901641_Checklist_avec_url_des_pdf__9XII17_.pdf) made by Loreleï Vanderheyden and Jean-Luc Fournet.
-
-## Table of Contents
-
- * [Papyri](#Papyri)
- * [Ostraca](#Ostraca)
- * [Tablets](#Tablets)
- * [Corpora](#Corpora)
- * [Instrumenta](#Instrumenta)
- * [Series](#Series)
- * [Periodicals](#Periodicals)
- * [Congresses](#Congresses)
- * [Editions of Greek and Coptic Documentary Papyri by Year of Publication](#Editions)
- * [Appendix: Other citations sometimes used for editions of papyri](#Appendix)
-
-## <a id="Papyri">Papyri</a>
 ### <a id="Actenstücke">Actenstücke</a>
  = _Actenstücke aus der Königlichen Bank zu Theben in den Museen zu Berlin_, London, Paris, ed. U. Wilcken. Berlin 1887. (AbhBerlin 1886, Anhang, Abh.1; rp. in U. Wilcken, Berliner Akademieschriften zur Alten Geschichte und Papyruskunde I [Leipzig 1970] 39—104). Nos. 1—12. Republished in UPZ II 205—207, 214—215, 217—221, 226—228. &#91;MF 1.10; rp. DZA&#93; [Full bibliographic record](http://papyri.info/biblio/48130) [Online: archive.org](https://archive.org/details/actenstucke)
 

@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using OfficeOpenXml.Style;
 
 namespace PapyriChecklistItems;
 
@@ -41,9 +42,10 @@ class TableParser
         EndOfText
     }
 
-    private TableTokenCollection BasicTokenizer()
+    private TableTokenCollection BasicTokenizer(string collectionName)
     {
         var tokenCollection = new TableTokenCollection();
+        tokenCollection.Collection = collectionName;
         var currentMode = CurrentTokenMode.NewToken;
         //While we have characters to look at
         while (currentMode != CurrentTokenMode.EndOfText)
@@ -84,6 +86,7 @@ class TableParser
                 {
                     //Add the number value
                     tokenCollection.AddEntryNumber(textToken);
+                    tokenCollection.BaseText += " " + textToken.Trim();
                 }
             }
             else if (CurrentTokenType == TableTokenTypes.AuthorInfo)
@@ -92,6 +95,7 @@ class TableParser
                 CurrentTokenType = TableTokenTypes.Title;
                 currentMode = CurrentTokenMode.MidToken;
                 tokenCollection.Author = textToken.Trim();
+                tokenCollection.BaseText += " " + textToken.Trim();
             }
             else if (CurrentTokenType == TableTokenTypes.Title)
             {
@@ -99,14 +103,18 @@ class TableParser
                 CurrentTokenType = TableTokenTypes.PublisherInfo;
                 currentMode = CurrentTokenMode.CloseToken;
                 tokenCollection.Title = textToken.Trim();
+                tokenCollection.BaseText += " " + textToken.Trim();
+
             }
             else if (CurrentTokenType == TableTokenTypes.PublisherInfo)
             {
                 CurrentTokenType = TableTokenTypes.None;
                 currentMode = CurrentTokenMode.EndOfText;
+                tokenCollection.BaseText += " " + textToken.Trim();
                 ExtractPublicationInfo(tokenCollection, textToken.Trim());
             }
         }
+        
 
         return tokenCollection;
     }
@@ -137,19 +145,21 @@ class TableParser
         return false;
     }
 
-    public BibliographyEntry Parse(string tableEntry)
+    public BibliographyEntry Parse(string tableEntry, string collection)
     {
         TextToParse = tableEntry;
         TextCounter = 0;
         CurrentTokenType = TableTokenTypes.None;
 
-        var tokenCollection = BasicTokenizer();
+        var tokenCollection = BasicTokenizer(collection);
+
         return new BibliographyEntry(
             tokenCollection.Author,
             tokenCollection.Title,
             tokenCollection.PublicationDate,
             tokenCollection.EntryNumber,
-            tokenCollection.IntermediaryText
+            tokenCollection.BaseText,
+            tokenCollection.Collection
         );
     }
 }

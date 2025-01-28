@@ -1,0 +1,452 @@
+
+### <a id="P.Babatha">P.Babatha</a> (see [P.Yadin](#P.Yadin)) <ddb:p.babatha>
+
+### <a id="P.Berenike">P.Berenike</a> (see [O.Berenike](#O.Berenike)).
+
+### <a id="P.CrumST">P.CrumST</a> (see [O.CrumST](#O.CrumST))
+
+### <a id="P.CrumVC">P.CrumVC</a> (see [O.CrumVC](#O.CrumVC))
+
+### <a id="P.Med.">P.Med.</a> (see [P.Mil.](#P.Mil.)).
+
+### <a id="P.Medin.Madi">P.Medin.Madi</a> (see [O.Medin.Madi](#O.Medin.Madi)).
+
+### <a id="PUG">PUG</a> (see [P.Genova](#P.Genova)).
+
+
+### <a id="VBP">VBP</a> (see [P.Bad.](#P.Bad.)).
+
+
+### <a id="O.Deiss.">O.Deiss.</a> (see [P.Meyer](#P.Meyer)).'
+
+### <a id="O.Eleph.Wagner">O.Eleph.Wagner</a> (see [P.Eleph.Wagner](#P.Eleph.Wagner)).
+
+### <a id="O.Fay.">O.Fay.</a> (see [P.Fay](#P.Fay.))
+
+
+### <a id="O.Lips.">O.Lips.</a> (see [P.Lips.](#P.Lips.))
+
+
+### <a id="O.Masada">O.Masada (see [P.Masada](#P.Masada). Nos. 750—771 are Latin ostraca, nos. 772—794 Greek)</a>
+
+
+### <a id="O.Meyer">O.Meyer</a> (see [P.Meyer](#P.Meyer))
+
+
+### <a id="O.Nancy">O.Nancy</a> (see [O.BawitIFAO](#O.BawitIFAO))
+
+
+### <a id="O.Paris">O.Paris</a> (see [P.Paris](#P.Paris))
+
+### <a id="O.Quseir">O.Quseir</a> (see [P.Quseir](#P.Quseir))
+
+### <a id="O.Sarga">O.Sarga</a> (see [P.Sarga](#P.Sarga))
+
+### <a id="O.Tebt.">O.Tebt.</a> (Nos. 1—20, see [P.Tebt. II](#P.Tebt._II))
+
+
+### <a id="O.Zauzich">O.Zauzich</a> (see [P.Zauzich](#P.Zauzich))
+
+## <a id="Editions">Editions of Greek and Coptic Documentary Papyri by Year of Publication</a>
+
+Publications printed without an index are listed in parentheses, e.g., "1901: (Stud.Pal. I)." If an index to that volume appears in a later volume of the series this will be indicated in the entry for that later volume, e.g, "1901: (Stud.Pal. I); 1902: (Stud. Pal. II); 1905: Stud.Pal. (I+II+)IV" (This convention was especially useful before the emergence of the DDbDP). The dates of publication of fascicles of a volume are not taken into account, but those of separate parts are. All Greek editions before 1891 are omitted as superseded by later editions.
+
+### <a id="Greek">Greek</a>
+ * 1891: P.Petr. I
+ * 1892: –––
+ * 1893: P.Lond. I; P.Petr. II
+ * 1894: –––
+ * 1895: BGU I; CPR I
+ * 1896: P.Grenf. I; P.Rev. 1st ed.
+ * 1897: P.Grenf. II
+ * 1898: BGU II; P.Lond. II; P.Oxy. I
+ * 1899: P.Oxy. II; O.Wilck.
+ * 1900: P.Fay.
+ * 1901: P.Amh. II; (Stud.Pal. I)
+ * 1902: P.Cair.Goodsp.; P.Kar.Goodsp.; P.Tebt. I; (Stud.Pal. II)
+ * 1903: BGU III; P.Oxy. III
+ * 1904: P.Oxy. IV; (Stud.Pal. III)
+ * 1905: P.Petr. III; P.Rein. I; Stud.Pal. (I+II+)IV, V
+ * 1906: P.Flor. I; P.Gen. I; P.Hib. I; P.Lips.; Pap.Heid. III
+ * 1907: P.Eleph.; P.Lond. III; P.Tebt. II
+ * 1908: P.Flor. II (fasc. 1); P.Oxy. VI; Stud.Pal. VII, (III+)VIII
+ * 1909: –––
+ * 1910: P.Flor. II (fasc. 1+)2; (P.Giss. I.1, I.2); P.Lond. IV; P.Oxy. VII; Stud.Pal. X
+ * 1911: P.Cair.Masp. I; P.Cair.Preis.; (P.Hamb. I.1); P.Oxy. VIII; P.Thead.
+ * 1912: BGU IV; (P.Giss. I.1–2+) I.3; P.Lille II; P.Oxy. IX; PSI I; P.Stras. I; Chrest.Mitt.; Chrest.Wilck.
+ * 1913: P.Cair.Masp. II; P.Hal.; (P.Hamb. I.2); (P.Iand. II, III); Stud.Pal. XIII; O.Erem.; O.Theb.
+ * 1914: P.Freib. I; (P.Grad.); (P.Iand. IV); P.Monac.; P.Oxy. X; PSI III; (Stud.Pal. XIV); O.Joach.
+ * 1915: P.Flor. III; P.Ryl. II; (SB I)
+ * 1916: P.Cair.Masp. III; (P.Freib. II); P.Meyer; P.Oxy. XII; O.Deiss.
+ * 1917: P.Bas.; P.Lond. V; PSI IV; PSI V; Stud.Pal. XVII
+ * 1918: –––
+ * 1919: BGU V.1
+ * 1920: P.Frankf.; P.Oxy. XIV; PSI VI; P.Stras. II
+ * 1921: P.Gur.; Stud.Pal. XX
+ * 1922: BGU VI; Stud.Pal. XXII; SB (I+)II; O.Brüss.Berl.; O.Sarga
+ * 1923: P.Bad. II; O.Stras.
+ * 1924: P.Bad. IV; P.Berl.Thun.; (P.Giss.Univ. I); P.Hamb. I; P.Lond. VI; P.Oxy. XVI
+ * 1925: P.Cair.Zen. I; PSI VII
+ * 1926: BGU VII; P.Bour.; P.Cair.Zen. II; P.Corn.; (P.Jena)
+ * 1927: P.Freib. III; P.Oxy. XVII; P.Ross.Georg. IV; PSI VIII; (UPZ I); SB III
+ * 1928: P.Cair.Zen. III; P.Lille I; (P.Mil. I.1)
+ * 1929: P.Berl.Möller; P.Col. I; P.Got.; P.Ross.Georg. II; PSI IX
+ * 1930: P.Achm.; P.Ross.Georg. III; (O.Bodl. I, O.Ashm., O.Camb., O.Minor, O.Petr.)
+ * 1931: P.Berl.Frisk; P.Cair.Zen. IV; P.Enteux. (first fasc.); (P.Giss.Univ. III); P.Marm.; P.Mich. I; P.Oslo II; P.Princ. I; SB IV
+ * 1932: P.Berl.Leihg. I; P.Col. II; P.Enteux. (second fasc.); PSI X
+ * 1933: BGU VIII; P.Gron.; P.Mich. II; (P.Princ.Roll); (P.Tebt. III.1); O.Oslo
+ * 1934: P.Col. III; (P.Iand. VI, P.Iand. VII); P.Würzb.; O.Buch.
+ * 1935: P.Ross.Georg. V; P.Vars.; O.Mich. I; O.Wilb.
+ * 1936: P.Brem.; P.Harr. I; P.Mich. III; (P.Mich. IV.1); P.Oslo III; P.Princ. II
+ * 1937: BGU IX; P.Edfou I; P.Mil.Vogl. I; (P.Lund II); O.Edfou I
+ * 1938: P.Bad. VI; P.Edfou II; (P.Iand. VIII); (P.Lund III); P.Tebt. (III.1+)III.2; O.Edfou II
+ * 1939: P.Aberd.; P.Adl.; P.Athen.; P.Fouad; (P.Giss.Univ. VI); P.Mich. (IV.1+)IV.2
+ * 1940: P.Cair.Zen. V; P.Col. IV; P.Rein. II
+ * 1941: P.Berl.Zill.; P.Oxy. XVIII; P.Warr.
+ * 1942: P.Erl.; P.Haun. I; P.Oxf.; P.Princ. III; P.Vind.Bosw.
+ * 1943: –––
+ * 1944: P.Mich. V, VI; O.Mich. II
+ * 1945: –––
+ * 1946: (P.Lund IV); (P.Prag.Varcl I)
+ * 1947: P.Bacch.; P.Lund (II+III+IV+)V; P.Mich. VII; P.Phil.; (P.Prag.Varcl II)
+ * 1948: P.Mert. I; P.Oxy. XIX; (P.Stras. III)
+ * 1949: P.FuadUniv.
+ * 1950: P.Ant. I; P.Edfou III; P.Fam.Tebt.; O.Edfou III
+ * 1951: P.Mich. VIII; PSI XII; O.Mich. III
+ * 1952: (P.Lund VI); P.Oxy. XX; P.Ryl. IV; SB Bh. 1; T.Alb.
+ * 1953: P.Apoll.; P.Bon. I; PSI XIII
+ * 1954: P.Bal.; P.Col. VI; P.Hamb. II; P.Oxy. XXII; Ch.L.A. I
+ * 1955: P.Col. VI 2nd ed.; P.Hib. II; P.Ital. I; P.Michael.; SB V; (O.Bodl. II)
+ * 1956: P.Col. V; Ch.L.A. II
+ * 1957: P.Kroll; P.Oxy. XXIV; (P.Prag.Varcl NS 1–3); PSI XIV; UPZ (I+)II; (C.Pap.Jud. I)
+ * 1958: P.Heid. II; P.Ness. III; (P.Prag.Varcl NS 4–10)
+ * 1959: P.Dura; P.Mert. II; (P.Prag.Varcl NS 11–21)
+ * 1960: P.Ant. II; P.Cair.Isid.; (P.Prag.Varcl NS 22–39); (C.Pap.Jud. II)
+ * 1961: (P.Edfou IX); P.Mil.Vogl. II; P.Murabba'ât; (P.Prag.Varcl NS 40–53); P.Sarap.; SB Bh. 2
+ * 1962: P.Abinn.; P.Iand.inv. 653; P.Oxy. XXVII
+ * 1963: P.Heid. III; P.Leit.; P.Stras. (III+)IV; P.Vind.Sijp.; (SB VI); Ch.L.A. III
+ * 1964: P.Alex.; P.Herm.; P.Panop.Beatty; SB (VI+)VII; O.Bodl. (I+II+)III; (C.Ord.Ptol.); C.Pap.Jud. (I+II+)III
+ * 1965: P.Mil.Vogl. III; P.Select.; PSI Congr.XI
+ * 1966: P.Mich.Mchl.; P.Mil. (I.1+)II; P.Oxy. XXXI; PSI XV estr.; P.Sorb. I
+ * 1967: P.Ant. III; P.Mert. III; (P.Mil. I.1 2nd ed.); P.Mil.Vogl. IV; P.NYU I; P.Wisc. I; P.Yale I; (SB VIII); Ch.L.A. IV
+ * 1968: BGU XI; P.David; P.Oxy. XXXIII; P.Oxy. XXXIV
+ * 1969: P.Alex.Giss.; P.Petaus; SB (VIII+)IX
+ * 1970: BGU X; P.Mich. X; P.Oxy. XXXVI
+ * 1971: (P.IFAO I, P.IFAO II); P.Kron.; P.Mich. IX; P.Mich. XI; P.Oxy. XXXVIII; (P.Panop. I+II); (SB X); O.Ont.Mus. I
+ * 1972: P.Oxy. XL; P.Oxy. XLI; P.Vind.Worp
+ * 1973: P.Ashm. I; P.Berl.Brash.; P.Freer; P.Panop. (I+II+)III; P.Stras. V; SB (X+)XI
+ * 1974: BGU XII; P.Brux. I; P.Genova I; P.Lond. VII; P.Mil.Congr.XIV; P.Oxy. XLII
+ * 1975: P.Berl.Bork.; (P.Cair.Mich. I pt.I); P.Giss.Univ. (I+III+VI) Indexes; (P.IFAO III); P.Mich. XII; P.Oxy. XLIII; (P.Stras. VI); O.Mich. IV; Ch.L.A. V, VI, VII
+ * 1976: BGU XIII; CPR V; P.Coll.Youtie I+II; P.Köln I; P.Laur. I; P.Oxy. XLIV; P.Tebt. IV; P.Theon.; P.Vind.Sal.; P.Vind.Tand.;O.Amst.; O.Florida; O.Medin.Madi; O.Ont.Mus. II; C.Étiq.Mom.; Ch.L.A. VIII
+ * 1977: P.Berl.Leihg. II; P.Cair.Mich. I pt.(I+)II; P.Laur. II; P.Mich. XIII; P.Mil.Vogl. VI; P.Oxy. XLV; P.Recueil; PSI Corr. I; P.Tebt.Tait;P.Wisc. II; (SB XII); O.Brux. 2nd ed.; Ch.L.A. IX
+ * 1978: (CPR VI,1); P.Batav.; P.Herm.Landl.; P.Hombert I; P.Köln II; P.Oxy. XLVI; P.Sakaon; Ch.L.A. XII
+ * 1979: CPR VII; P.Col. VII; P.Congr.XV; P.Laur. III; P.Oxy.Hels.; P.Soter.; (P.Stras. VII); SB (XII+)XIII; O.Lund; O.Tebt.Pad.; Ch.L.A. X, XI
+ * 1980: P.Amst. I; BGU XIV; P.Charite; P.Genova II; P.Köln III; P.Mich. XIV; P.Oxy. XLVII; P.Panop. (repr.); (P.Stras. VIII 701–720);P.Vat.Aphrod.; P.Wash.Univ. I; P.Zen.Pestm.; O.Leid.
+ * 1981: P.Haun. II; P.Mil.Vogl. VII; P.NagHamm.; P.Oxy. XLVIII; (P.Stras. VIII 721–740); P.Tor.Amen.; P.Turner; P.Ups.Frid; (SBXIV.1); Ch.L.A. XIII
+ * 1982: P.Dion.; P.Ital. II; P.Köln IV; P.Mich. XV; P.Oxy. XLIX; (P.Stras. VIII 741–760); Ch.L.A. XIV, XX
+ * 1983: BGU XV; CPR VIII; P.Laur. IV; P.LeedsMus.; P.Mil.Congr. XVII; P.Oxy. L; P.Rain.Cent.; PSI Congr.XVII; (P.Stras. VIII 761–780); P.Tebt.Wall; (SB XIV.2–3); T.Vindol. I; Ch.L.A. XXI, XXII
+ * 1984: CPR IX; P.Hamb. III; P.Oxy. LI, LII; P.Princ.Roll 2nd ed.; (P.Stras. VIII 781–800); Ch.L.A. XVII; C.Pap.Gr. I
+ * 1985: (CPR VI.1+)VI.2; P.Harr. II; P.Haun. III; P.Köln V; P.Thmouis I; (P.Stras. IX 801–820); (SB XVI.1–2); Ch.L.A. XVIIII;C.Pap.Gr. II.1
+ * 1986: CPR X; P.Anag.; P.Erasm. I; P.Freib. IV; P.Gen. II; P.Heid. IV; P.Hels. I; P.Münch. I, III.1; P.Mil.Congr.XVIII; P.Quseir; (P.Stras. IX 821–840); P.Stras. (VI–VIII) Indexes; O.Cair.; O.Douch I; Ch.L.A. XXV; Pap.Agon.
+ * 1987: CPR XIII; P.Customs; P.Köln VI; P.Neph.; P.Oxy. LIV; (P.Stras. IX 841–860); O.Oasis; Ch.L.A. XIX
+ * 1988: P.Oxy. LV; P.Prag. I; (P.Stras. IX 861–880); (SB XVI.3); O.Ashm.Shelt.; O.Douch II; Ch.L.A. XXVIII
+ * 1989: CPR XIV; P.Yadin I = P.Babatha; P.Bub. I; P.Masada; P.Mil.Congr.XIX; P.Oxy. LVI; (P.Stras. IX 881–900); O.Elkab; O.Masada; T.Varie
+ * 1990: CPR XV; P.Col. VIII; P.Diog.; P.Heid. V; P.Matr.; P.Oxy. LVII; P.Wash.Univ. II
+ * 1991: CPR XVIIA, XVIIB, XVIII; P.Erasm. II; P.Genova III; P.Köln VII; P.Leid.Inst. I; P.Oxy. LVIII; P.Petr.2 I
+ * 1992: P.Brookl.; P.Oxy. LIX; PSI XX Congr.; P.Tor.Choach.; O.Claud. I; O.Douch III
+ * 1993: P.Athen.Xyla; P.Pher.; O.Narm. I; O.WadiHamm.; O.Waqfa; (SB XVIII); Ch.L.A. XXIX
+ * 1994: P.Heid. VI; P.Mich.Aphrod.; P.Oxy. LX; P.Oxy.Descr.; P.Sorb. II;(SB XIV 1, 2+) XV; (SB XIX.1); O.Vleem.; Ch.L.A. XLI, XLII;T.Vindol. II
+ * 1995: BGU XVI; P.Berl.Sarisch.; P.Dubl.; (P.Euphrates) Part I; P.Graux II; P.Kellis I; P.Naqlun I; P.Oxy. LXI, LXII; P.PalauRib.;P.Prag. II; PSI Congr.XXI; (SB XVI, 1—3+) XVII; Ch.L.A. XLIII, XLVI
+ * 1996: P.Bodl. I; P.Col. X; P.Gen. III; P.Heid. VII; P.Mich. XVIII; P.Oxy. LXIII; P.Pommersf.
+ * 1997: P.Ammon I; P.Chic.Haw.; (P.Euphrates) Part II; P.Graux III; P.Hever; P.Kellis IV; P.Köln VIII; P.Oxy. LXIV; P.Oxy.Census; (SBXX); O.Claud. II
+ * 1998: P.Bub.II; P.Col IX, XI;P.Eirene I; P.Eleph.Wagner; P.Hamb. IV; P.Louvre I; P.Oxy. LXV; (SB XXI.1); O.Eleph.Wagner
+ * 1999: P.Giss.Apoll.; P.Oxy. LXVI; O.Douch IV
+ * 2000: BGU XVIII.1; P.Benaki; P.Bingen; (P. Euphrates) Part III; P.Lond. 1177 (reed.); P.Mon.Apollo; O.Berenike; O.Claud. III
+ * 2001: BGU XVII; CPR XXII; P.Dion.Herm.; P.Harrauer; P.Heid. VIII; P.Köln IX;P.Oxy. LXVII; P.Polit.Jud.; P.Thomas; P.Yale III; (SB XVIII+) XIX; (SB XXII); O.Douch V.
+ * 2002: CPR XXIII, XXIV; P.Berl.Salmen.; P.Erl.Diosp.; P.Dryton; P.Gen. I (2nd ed.); P.Lips. II; P.Petra I; P.Yadin II, (SB XX+XXI, 1+) XXI,2; (SB XXII+) XXIII;
+ * 2003: P.Diosk.; P.Hombert II; P.Köln X; P.Oxy. LXVIII; (SB XXIV); T.Vindol. III
+ * 2004: CPR XIX; P.Eirene II; P.Graux IV; P.Horak; P.Paramone; P.Zauzich; O.BawitIFAO; O.Kellis
+ * 2005: BGU XIX; P.Louvre II; PSI Com. 6; P.Oxy. LXIX; P.Schøyen I;   P.Tebt. V; O.Berenike II; O.Heid.; O.Krok.
+ * 2006: CPR XXV, P.Ammon II; P.Cair.Salem; P.Count, P. Dime II; P.Heid. IX; P.Oxy. LXX; SB XXVI; O.Dime
+ * 2007: P.Berl. Cohen; P.Iand.Zen.; P.Köln XI; P.Oxy. LXXI; P.Petra III, P.Sijp.; Stud.Pal. III2.1, 2, 5; P.Brux.Bawit
+ * 2008: P.Naqlun II; P.Oxy. LXXII; PSI XV; P.Worp; O.Abu Mina; O.Cret.Chers.
+ * 2009: P.Clackson; P.Kramer; P.Oxy. LXXIII, LXXIV; P.Poethke; O.EdfouIFAO; PSI Com. 8; C.Palmomanticum
+ * 2010: CPR ΧΧΧ; P.Dime III; P.Eirene III; P.Gen. IV; P.Jena II; P.Köln XII; P.Narm. I; P.NYU II; P.Oxy. LXXV; P.Schøyen II
+ * 2011: CPR XXXII; P.Lond.Herm.; P.Mich. XX; P.Oxy. LXXVI, LXXVII; P.Petra IV; P.Prag. III; PSI Com. 9; P.Sorb. III; P.Vet.Aelii; O.Taxes II; T.Vindol. IV
+ * 2012: P.Herakl.Bank; P.Oxy. LXXVIII; P.Tebt.Quen.; P.Philammon; P.Pintaudi; P.Scholl; O.Did.; O.Petr.Mus.; O.Trim. I
+ * 2013: P.Bagnall; P.Köln XIII; P.Petra II; PSI XVI; PSI Com. 11; P.Tarich.; SB XXVIII
+ * 2014: BGU XX; P.Cair.Preis. (2nd ed.); P.Fouad Astr.; P.Heid. X; P.Louvre Bawit; P.Monts.Roca IV; P.Oxy. LXXIX; P.Oxy. LXXX; P.Stras. X; P.Turku
+ * 2015: CPR XXXIII; P.Cair.Mich. II; P.Genova V; P.Tebt.Pad. I; P.Köln XIV; P.Coles; P.Daris; PSI Com. 12
+ * 2016: P.ÄkNo.; P.Gascou; P.Genova IV; P.Oxy. LXXXI; P.Oxy. LXXXII; O.Bankes; O.Berenike III; O.Trim. II; T.Bloomberg; P.Bastianini; P.Eirene IV; O.BawitFribourg
+ * 2017: P.Trier I; P.Petr.Kleon; P.Haun. IV; Pap.Flor. XXXIX; P.Schøyen II; P.Köln XV; P.Nekr.
+ * 2018: P.Köln XVI; P.Oxy. LXXXIII; P.Mich. XXI; PSI XVII; CPF IV.2 II.2-II.3; BGU XXII; Pap.Leod. VIII; Pap.Lugd.Bat. XXXIV; P.Petra V; P.Capasso
+ * 2019: P.BYU I; O.Krok. II; PapCongr. XXVIII; P.Trier II; P.Oxy. LXXXIV
+ * 2020: P.Bas. II; P.Christodote; P.Oxyrhyncha; CPR XXXV; P.Giss. II; P.Math.; P.Berl.Monte; P.Messeri; P.Oxy. LXXXV
+ * 2021: P.Hoogendijk; P.Cair.Mich. III; P.Heid. XI; P.Köln XVII; P.Yale IV; P.Oxy. LXXXVI
+ * 2022: P.Cair.Gad; P.Christ.Musl.; P.KölnLexikon; P.KölnSarapion; O.Berenike IV; P.Louvre III; O.Blemmyes; P.Aegyptus Cent.
+ * 2023: P.Jördens; P.Leid.Inst. II; P.Oxy. LXXXVII; P.KölnLand.
+ * 2024: P.Würzburg II; BGU XXI; P.Fouad II.; P.Van Minnen; P.Petr.Cahier
+
+### <a id="Coptic">Coptic</a>
+ * 1876: P.RevilloutCopt.
+ * 1893: P.Fay.Copt.
+ * 1895: (BKU I.1); CPR II
+ * 1899: P.Amh.Eg.
+ * 1900: P.Pisentius (part 1)
+ * 1901: P.Amh. II
+ * 1902: (BKU I.2-3); P.Pisentius (part 2); O.Crum
+ * 1903: (BKU I.4)
+ * 1904: (BKU I.5-6); BKU II.1
+ * 1905: BKU I.(1-6+)7; P.Lond.Copt. I; O.Brit.Mus.Copt. I
+ * 1909: P.Ryl.Copt.
+ * 1910: P.Lond. IV
+ * 1912: P.KRU
+ * 1913: O.Theb.
+ * 1914: P.Pisentius (part 3)
+ * 1917: P.Bas.; P.Lond. V
+ * 1921: O.CrumST
+ * 1922: P.Sarga
+ * 1924: P.Lond. VI
+ * 1926: P.Mon.Epiph.
+ * 1930: O.Camb.; O.Petr.
+ * 1932: P.CLT
+ * 1934: O.Buch.
+ * 1938: P.Schutzbriefe
+ * 1939: O.CrumVC
+ * 1942: P.(&O.)Mich.Copt.; O.Mich.Copt.Etmoulon
+ * 1952: O.Medin.HabuCopt.
+ * 1953: P.Apoll.
+ * 1954: P.Bal.
+ * 1956: Pap.Arbeit.
+ * 1958: CPR IV
+ * 1959: P.HermitageCopt.; P.MoscowCopt.
+ * 1960: O.Vind.Copt.
+ * 1965: O.Mon.Phoib.
+ * 1967: (BKU III.1); P.Mil.Vogl. IV
+ * 1968: BKU III.(1+)2
+ * 1973: P.Freer
+ * 1974: P.Mil.Vogl. V
+ * 1976: O.Amst.
+ * 1979: P.Congr.XV; P.Laur. III
+ * 1980: P.KölnÄgypt.
+ * 1981: P.NagHamm.; P.Turner
+ * 1984: P.Laur. V
+ * 1986: P.YaleCopt.; O.Deir el-Bahari; O.Douch I
+ * 1987: CPR XII; P.Lond.Copt. II; P.Neph.
+ * 1988: O.Douch II
+ * 1993: P.Athen.Xyla; P.MorganLib.; SB XVIII; SB Kopt. I
+ * 1995: CPR XX
+ * 1997: P.Köln VIII
+ * 1999: P.Giss.Apoll.; P.Kell. V; O.Bawit; O.Douch IV
+ * 2000: P.Bingen; P.Mon.Apollo; O.Ashm.Copt.; O.Brit.Mus.Copt. II.
+ * 2004: P.Horak; P.Paramone; O.BawitIFAO; SB Kopt. II
+ * 2006: SB Kopt. III
+ * 2007: P.Kellis VI; P.Brux.Bawit
+ * 2008: P.Bawit Clackson
+ * 2009: P.Clackson; O.EdfouIFAO
+ * 2010: O.Frangé
+ * 2011: CPR XXXI
+ * 2012: SB Kopt. IV
+ * 2013: P.Macq.; O.Lips.Copt. I
+ * 2014: P.Kellis VII; P.Louvre Bawit; P.Stras.Copt.
+ * 2016: P.KölnÄgypt. II; O.BawitFribourg
+ * 2017: P.PalauRib.Copt.
+ * 2018: CPR XXXIV; P.Heid.Kopt.
+ * 2020: SB Kopt. V; O.Lips.Copt. II; P.Mon.Phoib.Test.
+ * 2021: P.Hoogendijk; P.Heid. XI
+ * 2022: P.Christ.Musl.; P.Sorb.Copt.
+ * 2023: P.Tor.Cat.
+ * 2024: P.Lips.Copt. I, P.Carlsb. XVIII
+
+## <a id="Appendix">Appendix: Other citations sometimes used for editions of papyri</a>
+
+ * <a id="Apa J">Apa J</a> (see [P.RevilloutCopt.](#P.RevilloutCopt.))
+ * <a id="Apokrimata">Apokrimata</a> (see [P.Col. VI](#P.Col.))
+ * <a id="Arb.">Arb.</a> (see [Pap.Arbeit.](#Pap.Arbeit.))
+ * <a id="Bal.">Bal.</a> (see [P.Bal.](#P.Bal.))
+ * <a id="BM">BM</a> (see [P.Lond.Copt. I](#P.Lond.Copt.))
+ * <a id="Bürg.">Bürg.</a> (see [Pap.Bürgsch.Copt.](#Pap.Bürgsch.Copt.))
+ * <a id="Charta Borgiana.">Charta Borgiana</a> (see [P.Schow](#P.Schow))
+ * <a id="Chrest.">Chrest.</a> (see [Chrest.Mitt.](#Chrest.Mitt.) or [Chrest.Wilck.](#Chrest.Wilck.) or [P.Chrest.Nouvelle](#P.Chrest.Nouvelle) or [P.Chrest.Revillout](#P.Chrest.Revillout))
+ * <a id="CLT">CLT</a> (see [P.CLT](#P.CLT))
+ * <a id="CMSS">CMSS</a> (see [P.Fay.Copt.](#P.Fay.Copt.))
+ * <a id="CO">CO</a> (see [O.Crum](#O.Crum))
+ * <a id="C.P.An.">C.P.An.</a> (see [P.Anag.](#P.Anag.))
+ * <a id="C.P.Herm.">C.P.Herm. = Corpus Papyrorum Hermopolitanarum</a> (see [Stud.Pal. V](#Stud.Pal.))
+ * <a id="Dikaiomata">Dikaiomata</a> (see [P.Hal.](#P.Hal.))
+ * <a id="DJD">DJD</a> (see [P.Murabba'ât](#P.Murabba'ât))
+ * <a id="Ep.">Ep.</a> (see [P.Mon.Epiph.](#P.Mon.Epiph.))
+ * <a id="Erbstreit">Erbstreit</a> (text in [SB I 4512](http://papyri.info/ddbdp/sb;1;4512))
+ * <a id="GEMF">GEMF</a> (see [Pap.Mag.Formularies](#Pap.Mag.Formularies))
+ * <a id="GMP">GMP</a> (see [Gr.Med.Pap.](#Gr.Med.Pap.))
+ * <a id="G.S.M.">G.S.M.</a> (see [Shorthand Manuals](#Shorthand_Manuals))
+ * <a id="Hall">Hall</a> (see [O.Brit.Mus.Copt.](#O.Brit.Mus.Copt.))
+ * <a id="Heid.Veroff.">Heid.Veroff.</a> (see [P.Heid.](#P.Heid.))
+ * <a id="Herm.">Herm.</a> (see [P.HermitageCopt.](#P.HermitageCopt.))
+ * <a id="J">J</a> (see [P.KRU](#P.KRU))
+ * <a id="KOW">KOW</a> (see [O.Vind.Copt.](#O.Vind.Copt.))
+ * <a id="KRT">KRT</a> (see [P.KRU](#P.KRU))
+ * <a id="KRU">KRU</a> (see [P.KRU](#P.KRU))
+ * <a id="Kr">Kr</a> (see [CPR II](#CPR))
+ * <a id="KSB">KSB</a> (see [SB Kopt.](#SB_Kopt.))
+ * <a id="KTE">KTE</a> (see [P.HermitageCopt.](#P.HermitageCopt.))
+ * <a id="KTM">KTM</a> (see [P.MoscowCopt.](#P.MoscowCopt.))
+ * <a id="Lond.">Lond.</a> (see [P.Lond IV and V.](#P.Lond.))
+ * <a id="Mich.">Mich.</a> (see [O.Mich.Copt.](#O.Mich.Copt.), [O.Mich.Copt.Etmoulon](#O.Mich.Copt.Etmoulon) and [P.Mich.Copt.](#P.Mich.Copt.))
+ * <a id="Mon.Epiph.">Mon.Epiph.</a> (see [P.Mon.Epiph.](#P.Mon.Epiph.); Greek texts at [SB IV 7477-7514](http://papyri.info/ddbdp/sb;4;7477))
+ * <a id="Negotia">Negotia</a> (see [FIRA III](#FIRA_III))
+ * <a id="O.Bruss.Berl.">O.Bruss.Berl.</a> (see [O.Berl.](#O.Berl.) and [O.Brux.](#O.Brux.))
+ * <a id="O.Cair.">O.Cair.</a> (see [O.Cair.Cat.](#O.Cair.Cat.))
+ * <a id="O.Cair.GPW">O.Cair.GPW</a> (see [O.Cair.](#O.Cair.))
+ * <a id="O.LeidenInsinger">O.LeidenInsinger</a> (see [O.Leid.](#O.Leid.))
+ * <a id="OMH">OMH</a> (see [O.Medin.HabuCopt.](#O.Medin.HabuCopt.))
+ * <a id="O.Rom.">O.Rom.</a> (see [O.Ont.Mus.](#O.Ont.Mus.))
+ * <a id="O.Tait">O.Tait</a> (see [O.Bodl.](#O.Bodl.))
+ * <a id="O.Viereck">O.Viereck</a> (see [O.Stras.](#O.Stras.))
+ * <a id="O.Zereteli">O.Zereteli</a> (see [O.Erem.](#O.Erem.))
+ * <a id="P.Amst.">P.Amst.</a> (see [P.Gron.](#P.Gron.))
+ * <a id="P.Amstel.">P.Amstel.</a> (see [P.Gron.](#P.Gron.))
+ * <a id="P.Arsinoe">P.Arsinoe</a> (see [P.Hawara](#P.Hawara))
+ * <a id="P.Artemisia">P.Artemisia</a> (text in [UPZ I 1](http://papyri.info/dclp/65797))
+ * <a id="P.Ashmol.">P.Ashmol.</a> (see [P.Ashm.](#P.Ashm.))
+ * <a id="P.Athen.S.A.">P.Athen.S.A.</a> (see [P.Athen.](#P.Athen.))
+ * <a id="P.Ausonia">P.Ausonia</a> (texts in [P.Flor. III 291](http://papyri.info/ddbdp/p.flor;3;291), [P.Flor. III 357](http://papyri.info/ddbdp/p.flor;3;357), [P.Flor. III 358](http://papyri.info/ddbdp/p.flor;3;358))
+ * <a id="P.Bakchiastexte">P.Bakchiastexte</a> (see [P.Lund IV.](#P.Lund))
+ * <a id="P.Bankakten">P.Bankakten</a> (see [P.Berl.Frisk.](#P.Berl.Frisk))
+ * <a id="P.Beatty Panop.">P.Beatty Panop.</a> (see [P.Panop.Beatty.](#P.Panop.Beatty))
+ * <a id="P.Beauge">P.Beauge</a> (texts in [P.Cair.Masp. II 67156](http://papyri.info/ddbdp/p.cair.masp;2;67156tripl), [P.Cair.Masp. III 67279](http://papyri.info/ddbdp/p.cair.masp;3;67279), [P.Cair.Masp. III 67305](http://papyri.info/ddbdp/p.cair.masp;3;67305))
+ * <a id="P.Berl.Eleph.">P.Berl.Eleph.</a> (see [P.Berl.Dem. I](#P.Berl.Dem.) or [P.Eleph.Dem.](#P.Eleph.Dem.))
+ * <a id="P.Berl.Kaufv.">P.Berl.Kaufv.</a> (see [P.Berl.Dem. II.](#P.Berl.Dem.))
+ * <a id="P.Bibl.Univ.Giss.">P.Bibl.Univ.Giss.</a> (see [P.Giss.Univ.](#P.Giss.Univ.))
+ * <a id="P.BM Andrews">P.BM Andrews</a> (see [P.Brit.Mus. IV.](#P.Brit.Mus.))
+ * <a id="P.BM Glanville">P.BM Glanville</a> (see [P.Brit.Mus. I.](#P.Brit.Mus.))
+ * <a id="P.BM Reich">P.BM Reich</a> (see [P.Brit.Mus.Reich](#P.Brit.Mus.Reich))
+ * <a id="P.BM Siut">P.BM Siut</a> (see [P.Siut](#P.Siut))
+ * <a id="P.Boissier">P.Boissier</a> (text in [W.Chrest. 13](http://papyri.info/ddbdp/chr.wilck;;13))
+ * <a id="P.Brookl.Pierce">P.Brookl.Pierce</a> (see [P.Brookl.Dem.](#P.Brookl.Dem.))
+ * <a id="P.Buttmann">P.Buttmann</a> (text in [UPZ II 175b](http://papyri.info/ddbdp/upz;2;175))
+ * <a id="P.Cair.">P.Cair.</a> (see [P.Cair.Cat.](#P.Cair.Cat.))
+ * <a id="P.Cair.Byz.">P.Cair.Byz.</a> (see [P.Cair.Masp.](#P.Cair.Masp.))
+ * <a id="P.Cair.GH">P.Cair.GH</a> (see [P.Cair.Cat.](#P.Cair.Cat.))
+ * <a id="P.Casati">P.Casati</a> (text in [UPZ II 180a.](http://papyri.info/ddbdp/upz;2;180))
+ * <a id="P.Catt.">P.Catt.</a> (text for No. I in [Chrest.Mitt. 88](http://papyri.info/ddbdp/chr.mitt;;88) and [Chrest.Mitt. 372](http://papyri.info/ddbdp/chr.mitt;;372) and for No. II in [SB I 4284](http://papyri.info/ddbdp/sb;1;4284))
+ * <a id="P.Ceriani">P.Ceriani</a> (text in [UPZ I 46](http://papyri.info/ddbdp/upz;1;46))
+ * <a id="P.ChesterBeatty">P.ChesterBeatty</a> (see [P.Beatty](#P.Beatty))
+ * <a id="P.Chic.Goodsp.">P.Chic.Goodsp.</a> (see [P.Kar.Goodsp.](#P.Kar.Goodsp.))
+ * <a id="P.Chrestomathie">P.Chrestomathie</a> (see [P.Chrest.Revillout](#P.Chrest.Revillout))
+ * <a id="P.Col.123">P.Col.123</a> (see [P.Col. VI.](#P.Col.))
+ * <a id="P.Col.480">P.Col.480</a> (see [P.Col. I.](#P.Col.))
+ * <a id="P.Col.Zen.">P.Col.Zen.</a> (see [P.Col. III and IV.](#P.Col.))
+ * <a id="P.Coll. Hell. I">P.Coll. Hell. I</a> (see [C.Jud.Syr.Eg.](#C.Jud.Syr.Eg.))
+ * <a id="P.Colon.">P.Colon.</a> (see [P.Köln](#P.Köln))
+ * <a id="P.Colon.Panop.">P.Colon.Panop.</a> (see [P.Panop.](#P.Panop.))
+ * <a id="P.Cong.Omaggio">P.Cong.Omaggio</a> (see [PSI Congr.XI](#PSI_Congr.XI))
+ * <a id="P.Copenhagen">P.Copenhagen</a> (text in [SB I 428](http://papyri.info/ddbdp/sb;1;428); see also [P.Haun.](#P.Haun.))
+ * <a id="P.Corpus">P.Corpus</a> (see [P.CorpusRevillout](#P.CorpusRevillout))
+ * <a id="P.Denkschriften">P.Denkschriften</a> (see [the listing in SB II. pp.74-82.](https://archive.org/details/sammelbuchgriech02wissuoft/page/74/mode/2up))
+ * <a id="P.Didot">P.Didot</a> (text in [UPZ I 56](http://papyri.info/ddbdp/upz;1;56))
+ * <a id="P.Dresden">P.Dresden</a> (text in [UPZ I 34](http://papyri.info/ddbdp/upz;1;34), [UPZ I 43](http://papyri.info/ddbdp/upz;1;43) and [UPZ I 44](http://papyri.info/ddbdp/upz;1;44))
+ * <a id="P.Droysen">P.Droysen</a> (texts in [UPZ II passim](http://papyri.info/ddbdp/upz;2))
+ * <a id="P.Edmondstone">P.Edmondstone</a> (text in [Chrest.Mitt. 361](http://papyri.info/ddbdp/chr.mitt;;361) see also [BASP 15 (1978) 235-36.](https://quod.lib.umich.edu/b/basp/0599796.0015.004/5:2) and [P.Oxy. IV, pp.202-203](https://archive.org/details/oxyrhynchuspapyr04gren/page/202/mode/2up))
+ * <a id="P.Eitrem">P.Eitrem</a> (see [listing in SB II p.83.](https://archive.org/details/sammelbuchgriech02wissuoft/page/82/mode/2up))
+ * <a id="Pes.">Pes.</a> (see [P.Pisentius](#P.Pisentius))
+ * <a id="P.Feste">P.Feste</a> (see [Feste](#Feste))
+ * <a id="P.Fuad">P.Fuad</a> (see also [P.Fouad](#P.Fouad))
+ * <a id="P.Fraser">P.Fraser</a>	(text in [UPZ I 158b,c](http://papyri.info/ddbdp/upz;2;158))
+ * <a id="P.Frisk">P.Frisk</a> (see [P.Berl.Frisk](#P.Berl.Frisk))
+ * <a id="P.Gentili">P.Gentili</a>	(texts in [SB I 5658](http://papyri.info/ddbdp/sb;1;5658), [P.Flor. III 368](http://papyri.info/ddbdp/p.flor;3;368r), [P.Flor. III 369](http://papyri.info/ddbdp/p.flor;3;369) and [P.Flor. III 370](http://papyri.info/ddbdp/p.flor;3;370))
+ * <a id="P.Germ.">P.Germ.</a>	(text in [SB I 3924](http://papyri.info/ddbdp/sb;1;3924))
+ * <a id="P.Gnomon">P.Gnomon</a> (see [BGU V](#BGU))
+ * <a id="P.Goodsp.">P.Goodsp.</a> (see [P.Cair.Goodsp.](#P.Cair.Goodsp.), [P.Chic.](#P.Chic.) and [P.Kar.Goodsp.](#P.Kar.Goodsp.))
+ * <a id="P.Graz">P.Graz</a> (texts in [Stud.Pal. IV pp. 114-21](https://archive.org/details/studienzurpalaeo04wess/page/114/mode/2up), [P.Turner 50](http://papyri.info/ddbdp/p.turner;;50) and [SB XVI 12484](http://papyri.info/ddbdp/sb;16;12484))
+ * <a id="P.Grey">P.Grey</a> (texts in [UPZ II 165](http://papyri.info/ddbdp/upz;2;165), [UPZ II 166](http://papyri.info/ddbdp/upz;2;166) and [UPZ II 167](http://papyri.info/ddbdp/upz;2;167))
+ * <a id="P.Gr.Texte">P.Gr.Texte</a> (see [P.Meyer](#P.Meyer))
+ * <a id="P.Heid. 1280">P.Heid. 1280</a> (text in [SB I 4638](http://papyri.info/ddbdp/sb;1;4638))
+ * <a id="P.Herm.Boul.">P.Herm.Boul.</a> (see [CPR XXXV](#CPR))
+ * <a id="P.Hernals">P.Hernals</a> (see [listing in SB II p.93.](https://archive.org/details/sammelbuchgriech02wissuoft/page/93/mode/2up))
+ * <a id="P.Hess.">P.Hess.</a> (see [P.Giss.](#P.Giss.))
+ * <a id="P.Ibscher">P.Ibscher</a> (see [P.Hamb. II](#P.Hamb.) and Montevecchi, La Papirologia p.418.)
+ * <a id="P.Innsbruck">P.Innsbruck</a> (text in [UPZ I 136](http://papyri.info/ddbdp/upz;1;136))
+ * <a id="P.Jand.">P.Jand.</a> (see [P.Iand.](#P.Iand.))
+ * <a id="P.Jernstedt">P.Jernstedt</a> (text in [W.Chrest. 155](http://papyri.info/dclp/64223))
+ * <a id="P.Jews">P.Jews</a> (see [P.Lond. VI](#P.Lond.))
+ * <a id="P.Jomard">P.Jomard</a> (text in [P.Paris p. 257](http://papyri.info/ddbdp/p.paris;;pg257))
+ * <a id="P.Jud.Des.">P.Jud.Des.</a> (see [P.Murabba'ât](#P.Murabba'ât))
+ * <a id="P.Karanis">P.Karanis</a> (see [P.Kar.Goodsp.](#P.Kar.Goodsp.))
+ * <a id="P.Kl.Form.">P.Kl.Form.</a> (see [Stud.Pal. III and IV](#Stud.Pal.))
+ * <a id="P.KölnDem.">P.KölnDem.</a> (see [P.KölnLüddeckens](#P.KölnLüddeckens))
+ * <a id="P.Köln Panop.">P.Köln Panop.</a> (see [P.Panop.](#P.Panop.))
+ * <a id="P.Landlisten">P.Landlisten</a> (see [P.Herm.Landl.](#P.Herm.Landl.))
+ * <a id="P.L.Bat.">P.L.Bat.</a> (see [Pap.Lugd.Bat.](#Pap.Lugd.Bat.))
+ * <a id="P.Lewald">P.Lewald</a> (see [P.Frankf.](#P.Frankf.))
+ * <a id="P.Libelli">P.Libelli</a> (see for listing [SB II p. 140.](https://archive.org/details/sammelbuchgriech02wissuoft/page/140/mode/2up))
+ * <a id="P.Lit.Lond.">P.Lit.Lond.</a> (see [P.Lond.Lit.](#P.Lond.Lit.))
+ * <a id="P.Louvre">P.Louvre</a> (see [UPZ passim](#UPZ); cf. also [P.Denkschriften](#P.Denkschriften))
+ * <a id="P.Lugd.Bat.">P.Lugd.Bat.</a> (see [P.Batav.](#P.Batav.), [P.David](#P.David), [P.Leid.](#P.Leid.), [P.Leid.Inst.](#P.Leid.Inst.), [P.L.Bat.](#P.L.Bat.) and [Pap.Lugd.Bat.](#Pap.Lugd.Bat.))
+ * <a id="P.Magd.">P.Magd.</a> (see [P.Lille II](#P.Lille))
+ * <a id="P.Magirus">P.Magirus</a> (texts in [SB I 5317-40](http://papyri.info/ddbdp/sb;1;5317) etc.)
+ * <a id="P.Maspero">P.Maspero</a> (see [P.Cair.Masp.](#P.Cair.Masp.))
+ * <a id="P.Med.">P.Med.</a> (see [P.Mil.](#P.Mil.))
+ * <a id="P.Mél.Rev.">P.Mél.Rev.</a> (see the listing in [SB II p. 140 under Revillout, Mélanges.](https://archive.org/details/sammelbuchgriech02wissuoft/page/140/mode/2up))
+ * <a id="P.Mich.Browne">P.Mich.Browne</a> (see [P.Mich. X.](#P.Mich.))
+ * <a id="P.Mich.Shelton">P.Mich.Shelton</a> (see [P.Mich. XI.](#P.Mich.))
+ * <a id="P.Mich.Sokn.Nes.">P.Mich.Sokn.Nes.</a> (texts in [SB V 7818-32](http://papyri.info/ddbdp/sb;5;7818))
+ * <a id="P.Mich.Zen.">P.Mich.Zen.</a> (see [P.Mich. I](#P.Mich.))
+ * <a id="P.Milit.">P.Milit.</a> (see [Rom.Mil.Rec.](#Rom.Mil.Rec.))
+ * <a id="P.Mimaut">P.Mimaut</a> (text in [Pap.Graec.Mag. I 3](http://papyri.info/dclp/64511))
+ * <a id="P.Minutoli">P.Minutoli</a> (see [UPZ II 181](#UPZ))
+ * <a id="P.Mitt.PER, P.Mitt.Rain., P.Mitteilungen Wien">P.Mitt.PER, P.Mitt.Rain., P.Mitteilungen Wien</a> (see [MPER](#MPER))
+ * <a id="P.Möller">P.Möller</a> (see [P.Berl.Möller](#P.Berl.Möller))
+ * <a id="P.Mon., P.Mun.">P.Mon., P.Mun.</a> (see [P.Monac.](#P.Monac.) and [P.Münch.](#P.Münch.))
+ * <a id="P.Neutest.">P.Neutest.</a> (see [P.Meyer](#P.Meyer))
+ * <a id="P.New York">P.New York</a> (text in [UPZ I 132](http://papyri.info/ddbdp/upz;1;132) and [UPZ I 134](http://papyri.info/ddbdp/upz;1;134))
+ * <a id="P.NouvelleChrest.">P.NouvelleChrest.</a> (see [P.Chrest.Nouvelle](#P.Chrest.Nouvelle))
+ * <a id="P.Oxford">P.Oxford</a> (see [P.Oxf.Griffith](#P.Oxf.Griffith))
+ * <a id="P.Panop.Borkowski">P.Panop.Borkowski</a> (see [P.Berl.Bork.](#P.Berl.Bork.))
+ * <a id="P.Papyrus Roll">P.Papyrus Roll</a> (see [P.Princ.Roll](#P.Princ.Roll))
+ * <a id="P.Passalacqua">P.Passalacqua</a> (see [UPZ II 159](http://papyri.info/ddbdp/upz;2;159))
+ * <a id="P.Petersb.">P.Petersb.</a> (texts in [P.Ross.Georg. I 22](http://papyri.info/dclp/64223), [P.Ross.Georg. III 26](http://papyri.info/ddbdp/p.ross.georg;3;26), [P.Ross.Georg. V 5](http://papyri.info/ddbdp/p.ross.georg;5;5), [P.Ross.Georg. V 19](http://papyri.info/ddbdp/p.ross.georg;5;19) and [P.Ross.Georg. V 56)](http://papyri.info/ddbdp/p.ross.georg;5;56))
+ * <a id="P.Philad.">P.Philad.</a> (see [P.Fam.Theb.](#P.Fam.Theb.))
+ * <a id="P.Prag.">P.Prag.</a> (see also [P.Prag.Varcl](#P.Prag.Varcl) and [P.Prag.Satzung.](#P.Prag.Satzung.))
+ * <a id="P.PRIMI">P.PRIMI</a> (see [P.Mil.Vogl. I](#P.Mil.Vogl.))
+ * <a id="P.Real.Ist.Veneto">P.Real.Ist.Veneto</a> (texts in [P.Flor. III 280](http://papyri.info/ddbdp/p.flor;3;280), [P.Flor. III 283](http://papyri.info/ddbdp/p.flor;3;283) and [P.Flor. III 286](http://papyri.info/ddbdp/p.flor;3;286))
+ * <a id="P.Rend.Harr.">P.Rend.Harr.</a> (see [P.Harr.](#P.Harr.))
+ * <a id="PRG">PRG</a> (see [P.Ross.Georg.](#P.Ross.Georg.))
+ * <a id="PRUM">PRUM</a> (see [P.Mil.Vogl. I.](#P.Mil.Vogl.))
+ * <a id="P.SAA, P.S.A.Athens">P.SAA, P.S.A.Athens</a> (see [P.Athen.](#P.Athen.))
+ * <a id="P.Sachini, Sakkinis, Sakkakinis">P.Sachini, Sakkinis, Sakkakinis</a> (text in [UPZ II 158a](http://papyri.info/ddbdp/upz;2;158))
+ * <a id="P.Salt.">P.Salt.</a> (text in [UPZ II 188](http://papyri.info/ddbdp/upz;2;188))
+ * <a id="P.Schmidt">P.Schmidt</a> (see [P.Berl.Schmidt](#P.Berl.Schmidt))
+ * <a id="P.Schott-Reinh.">P.Schott-Reinh.</a> (see [Pap.Heid. III](#Pap.Heid.))
+ * <a id="P.Sitol.">P.Sitol.</a> (see [P.Berl.Thun.](#P.Berl.Thun.))
+ * <a id="P.Soc.Ital.">P.Soc.Ital.</a> (see [PSI](#PSI))
+ * <a id="P.Socnobr.">P.Socnobr.</a> (see [P.Bacch.](#P.Bacch.))
+ * <a id="P.Sta.Xyla">P.Sta.Xyla</a> (see [P.Athen.Xyla](#P.Athen.Xyla))
+ * <a id="P.Stud.">P.Stud.</a> (see [Stud.Pal.](#Stud.Pal.))
+ * <a id="PSI Omaggio">PSI Omaggio</a> (see [PSI Congr.XI](#PSI_Congr.XI))
+ * <a id="PTA">PTA</a> (see [Pap.Texte Abh.](#Pap.Texte_Abh.))
+ * <a id="P.Taxroll">P.Taxroll</a> (see [P.Princ.Roll](#P.Princ.Roll))
+ * <a id="P.Testa">P.Testa</a> (texts in [SB I 4505](http://papyri.info/ddbdp/sb;1;4505), [SB I 5285](http://papyri.info/ddbdp/sb;1;5285) and [SB I 5286](http://papyri.info/ddbdp/sb;1;5286))
+ * <a id="P.Theb.Bank">P.Theb.Bank</a> (see [Actenstücke](#Actenstücke))
+ * <a id="P.Tiberii Julii Theones">P.Tiberii Julii Theones</a> (see [P.Theon.](#P.Theon.))
+ * <a id="P.Top.Ag.">P.Top.Ag.</a> (see [Stud.Pal. X](#Stud.Pal.))
+ * <a id="P.Tsoukalas">P.Tsoukalas</a> (see [P.Athen.](#P.Athen.))
+ * <a id="PUG">PUG</a> (see [P.Genova](#P.Genova))
+ * <a id="Push.">Push.</a> (see [P.MoscowCopt.](#P.MoscowCopt.))
+ * <a id="P.Variae">P.Variae</a> (see [P.Alex.Giss.](#P.Alex.Giss.))
+ * <a id="P.Vat.">P.Vat.</a> (texts in [UPZ passim](http://papyri.info/ddbdp/upz))
+ * <a id="P.Vat. II, P.Vat.gr. 11">P.Vat. II, P.Vat.gr. 11</a> (see [P.Marm.](#P.Marm.))
+ * <a id="P.Weil">P.Weil</a> (text in [UPZ I 56](http://papyri.info/ddbdp/upz;1;56))
+ * <a id="P.Wessely Prag.">P.Wessely Prag.</a> (see [P.Prag.](#P.Prag.))
+ * <a id="P.Zereteli">P.Zereteli</a> (see [P.Ross.Georg. passim](#P.Ross.Georg.))
+ * <a id="P.Zois">P.Zois</a> (text in [UPZ I 114](http://papyri.info/ddbdp/upz;1;114_1))
+ * <a id="RAC">RAC</a> (see [P.RevilloutCopt.](#P.RevilloutCopt.))
+ * <a id="Ryl.">Ryl.</a> (see [P.Ryl.Copt.](#P.Ryl.Copt.))
+ * <a id="Schutzbr.">Schutzbr.</a> (see [P.Schutzbriefe](#P.Schutzbriefe))
+ * <a id="ST">ST</a> (see [O.CrumST](#O.CrumST))
+ * <a id="Tor.">Tor.</a> (see [O.Theb.](#O.Theb.))
+ * <a id="UM">UM</a> (see [O.Mich.Copt.](#O.Mich.Copt.), [O.Mich.Copt.Etmoulon](#O.Mich.Copt.Etmoulon) and [P.Mich.Copt.](#P.Mich.Copt.))
+ * <a id="V.B.P.">V.B.P.</a> (see [P.Bad.](#P.Bad.))
+ * <a id="VC">VC</a> (see [O.CrumVC](#O.CrumVC))
+ * <a id="V.H.P.">V.H.P.</a> (see [P.Heid.](#P.Heid.))
+ * <a id="WS">WS</a> (see [P.Sarga](#P.Sarga))

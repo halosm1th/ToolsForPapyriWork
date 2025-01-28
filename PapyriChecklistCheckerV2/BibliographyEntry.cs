@@ -12,7 +12,7 @@ class BibliographyEntry
 
     public bool HasBibliographyEntry { get; } = false;
     
-    public string checklistNumber { get; set; }
+    public string ArchiveLink { get; }
 
     public string Name { get; }
     public string Author { get; }
@@ -22,8 +22,8 @@ class BibliographyEntry
 
     public string BibliographyNumber { get; }
 
-    public BibliographyEntry(string author = "", string title = "", 
-        string publicationDate = "",string bibliographyNumber = "", string fullText = "", string collection = "", string searchNumber = "" )
+    public BibliographyEntry(string author, string title, 
+        string publicationDate,string bibliographyNumber, string fullText, string collection, string archiveLink)
     {
         //A tiny bit of error checking. Basically, if it has nothing, its an empty entry.
         //If it has no number, then the entry wasn't found in the DB. 
@@ -37,6 +37,7 @@ class BibliographyEntry
         Author = author;
         BibliographyNumber = bibliographyNumber;
         FullText = fullText;
+        ArchiveLink = archiveLink;
     }
 
     public override string ToString()

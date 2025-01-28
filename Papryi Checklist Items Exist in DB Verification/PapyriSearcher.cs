@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using PapyriChecklistItems;
 
@@ -21,22 +23,25 @@ class PapyriSearcher
             Console.ResetColor();
         }
 
-        return AdvancedSearch(searchItem.Title, blockName, searchItem.OtherData, searchItem.Author, searchItem.Year) ?? new BibliographyEntry();
+        return AdvancedSearch(searchItem.Title, blockName, searchItem.OtherData, searchItem.Author, searchItem.Year, searchItem.FullText) ?? new BibliographyEntry();
     }
 
-    private BibliographyEntry? AdvancedSearch(string title, string source, string[] otherData, string? author, string? year)
+    private BibliographyEntry? AdvancedSearch(string title, string source, string[] otherData, string? author, string? year, string fullText)
     {
         var titleVariants = GenerateTitleVariants(title);
         var searchStrategies = GenerateSearchStrategies(source, titleVariants, author, year);
-
+        
+        var number = ExtractStartingRomanNumeral(title) ?? "";
+        
         BibliographyEntry? mostCorrectResult = null;
         int highestScore = AG_MIN;
         int sameResult = 0;
-        const int MAX_SAME_RESULt = 10;
+        const int MAX_SAME_RESULt = 8;
 
         foreach (var strategy in searchStrategies)
         {
-            var results = PerformSearch(strategy.Title, strategy.Source, strategy.Author, strategy.Year);
+            var results = PerformSearch(strategy.Title, strategy.Source, strategy.Author, 
+                strategy.Year);
             if (results != null)
             {
                 foreach (var result in results)
@@ -46,10 +51,20 @@ class PapyriSearcher
                     //If the result matches the most correct result, that means its more likely the most correct result,
                     //hopefully?
                     if (result.BibliographyNumber == mostCorrectResult?.BibliographyNumber) sameResult++;
-                    if (sameResult == MAX_SAME_RESULt) highestScore++;
+                    if (sameResult == MAX_SAME_RESULt)
+                    {
+                        highestScore++;
+                        sameResult = 0;
+                    }
                     
                     if (currentScore > highestScore)
                     {
+                        if (result.BibliographyNumber == mostCorrectResult?.BibliographyNumber)
+                        {
+                            var difference = currentScore - highestScore;
+                            currentScore += difference;
+                        }
+                        
                         highestScore = currentScore;
                         mostCorrectResult = result;
                     }
@@ -58,15 +73,18 @@ class PapyriSearcher
                 }
             }
         }
-
+        
         if (mostCorrectResult != null)
         {
+            mostCorrectResult.Collection = source;
+            mostCorrectResult.Collection += " " + number;
             if (_fullPrint)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Most correct result: {mostCorrectResult.Name}");
                 Console.ResetColor();
             }
+            
 
             return mostCorrectResult;
         }
@@ -179,6 +197,72 @@ class PapyriSearcher
 
         return variants.Distinct().ToList();
     }
+    
+    
+    static string? ExtractStartingRomanNumeral(string input)
+    {
+        if (string.IsNullOrEmpty(input)) return null;
+
+        // Regex to match Roman numerals at the start of the string
+        Regex romanNumeralRegex = new Regex("^(?i)(M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))");
+        Match match = romanNumeralRegex.Match(input);
+
+        if (match.Success)
+        {
+            if (match.Value.EndsWith(','))
+            {
+
+                var numb = ConvertRomanToArabic(match.Value.TrimEnd(','));
+                return numb == 0? "" : numb.ToString();    
+            }
+            else
+            {
+                var numb = ConvertRomanToArabic(match.Value);
+                return numb == 0 ? "" : numb.ToString();
+            }
+        }
+
+        return null;
+    }
+
+    static int ConvertRomanToArabic(string roman)
+    {
+        int result = 0;
+        int previousValue = 0;
+
+        foreach (char c in roman.ToUpper())
+        {
+            int currentValue = RomanCharToValue(c);
+
+            if (currentValue > previousValue)
+            {
+                result += currentValue - 2 * previousValue;
+            }
+            else
+            {
+                result += currentValue;
+            }
+
+            previousValue = currentValue;
+        }
+
+        return result;
+    }
+
+    static int RomanCharToValue(char c)
+    {
+        return c switch
+        {
+            'I' => 1,
+            'V' => 5,
+            'X' => 10,
+            'L' => 50,
+            'C' => 100,
+            'D' => 500,
+            'M' => 1000,
+            _ => 0
+        };
+    }
 
     private List<BibliographyEntry>? PerformSearch(string title, string? source, string? author, string? year)
     {
@@ -189,7 +273,7 @@ class PapyriSearcher
         if (!string.IsNullOrEmpty(year)) searchQuery += $"+{year}";
 
         var page = GetSearchPage(searchQuery);
-        return HasHits(page) ? GetResultsFromTable(page) : null;
+        return HasHits(page) ? GetResultsFromTable(page, source) : null;
     }
 
     private int EvaluateMatch(BibliographyEntry result, string title , string? author, string? year)
@@ -299,7 +383,7 @@ class PapyriSearcher
         return paragraphNodes != null && paragraphNodes.Any(x => x.InnerHtml.Contains("hits on"));
     }
 
-    private List<BibliographyEntry> GetResultsFromTable(HtmlDocument page)
+    private List<BibliographyEntry> GetResultsFromTable(HtmlDocument page, string source)
     {
         var results = new List<BibliographyEntry>();
         var tableParser = new TableParser();
@@ -311,7 +395,7 @@ class PapyriSearcher
             {
                 if (node.InnerText != "\n")
                 {
-                    results.Add(tableParser.Parse(node.InnerText));
+                    results.Add(tableParser.Parse(node.InnerText, source));
                 }
             }
         }

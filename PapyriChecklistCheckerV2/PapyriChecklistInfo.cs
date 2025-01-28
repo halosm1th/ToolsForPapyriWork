@@ -3,26 +3,120 @@ using System.Security.Cryptography.X509Certificates;
 using HtmlAgilityPack;
 using OfficeOpenXml;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using OfficeOpenXml.Style;
 using OfficeOpenXml;
-using Papryi_Checklist_Items_Exist_in_DB_Verification;
 
 namespace PapyriChecklistItems;
 using System.Net;
 using Microsoft.VisualBasic;
+class Entry
+{
+    public string Name { get; set; }
+    public List<SubEntry> SubEntries { get; set; } = new List<SubEntry>();
+}
+
+class SubEntry
+{
+    public string Title { get; set; }
+    public string Date { get; set; }
+    public string Authors { get; set; }
+    public string EntryNumber { get; set; }
+    public string ArchiveLink { get; set; }
+    public string PublicationLocations { get; set; }
+}
+
 class PapyriChecklistInfo
 {
     public static void Main()
     {
-        var checkListParser = new ChecklistChecker();
-        checkListParser.TokenizeCheckList();
-        var result = checkListParser.ParseTokenizedCheckList();
-        var parsed = checkListParser.StructureParsedData(result);
+        var checkListEntries = LoadChecklistEntries();
 
-        var parsedResults = ParseResults(parsed);
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Checklist parsed");
-        SaveResultsToCSV(parsedResults);
+        //var parsedResults = ParseResults(parsed);
+        //Console.ForegroundColor = ConsoleColor.Green;
+        //Console.WriteLine("Checklist parsed");
+        //SaveResultsToCSV(parsedResults);
+    }
+
+    private static List<Entry> LoadChecklistEntries()
+    {
+        string filePath = Directory.GetCurrentDirectory() + "/Fullchecklist.md";
+        var entries = new List<Entry>();
+        Entry currentEntry = null;
+
+        // Regex patterns
+        var entryHeaderPattern = new Regex("### <a id=\"\"(.*?)\">(.*?)<\\/a>");
+        var singleEntryPattern = new Regex(@"= _(.*?)_, (.*?\d{4}.*?\.|\d{4})(.*?)\. ed\. (.*?),? (.*?)\. (\d{4}).*?\[Online: archive\.org\]\((.*?)\)");
+        var subEntryPattern = new Regex(@"\* (\w+), (.*?)\. ed\. (.*?)\. (\d{4}).*?\[Online: archive\.org\]\((.*?)\)");
+
+        foreach (var line in File.ReadLines(filePath))
+        {
+            // Check for new top-level entry
+            var entryMatch = entryHeaderPattern.Match(line);
+            if (entryMatch.Success)
+            {
+                currentEntry = new Entry { Name = entryMatch.Groups[2].Value };
+                entries.Add(currentEntry);
+                continue;
+            }
+
+            // Check for single entry within an entry block
+            if (currentEntry != null)
+            {
+                var singleMatch = singleEntryPattern.Match(line);
+                if (singleMatch.Success)
+                {
+                    currentEntry.SubEntries.Add(new SubEntry
+                    {
+                        Title = singleMatch.Groups[1].Value.Trim(),
+                        PublicationLocations = singleMatch.Groups[2].Value.Trim(),
+                        Date = singleMatch.Groups[6].Value.Trim(),
+                        Authors = singleMatch.Groups[4].Value.Trim(),
+                        ArchiveLink = singleMatch.Groups[7].Value.Trim()
+                    });
+                    continue;
+                }
+
+                // Check for subentries (multiple * entries)
+                var subEntryMatch = subEntryPattern.Match(line);
+                if (subEntryMatch.Success)
+                {
+                    currentEntry.SubEntries.Add(new SubEntry
+                    {
+                        Title = subEntryMatch.Groups[2].Value.Trim(),
+                        Authors = subEntryMatch.Groups[3].Value.Trim(),
+                        Date = subEntryMatch.Groups[4].Value.Trim(),
+                        EntryNumber = subEntryMatch.Groups[1].Value.Trim(),
+                        ArchiveLink = subEntryMatch.Groups[5].Value.Trim()
+                    });
+                }
+            }
+        }
+
+        // Output results
+        foreach (var entry in entries)
+        {
+            Console.WriteLine($"Entry: {entry.Name}");
+            foreach (var sub in entry.SubEntries)
+            {
+                Console.WriteLine($"  Title: {sub.Title}");
+                Console.WriteLine($"  Publication Locations: {sub.PublicationLocations}");
+                Console.WriteLine($"  Date: {sub.Date}");
+                Console.WriteLine($"  Authors: {sub.Authors}");
+                Console.WriteLine($"  Entry Number: {sub.EntryNumber}");
+                Console.WriteLine($"  Archive Link: {sub.ArchiveLink}");
+                Console.WriteLine();
+            }
+        }
+
+        return entries;
+    }
+
+    static string ExtractArchiveLink(string line)
+    {
+        var archiveLinkPattern = new Regex(@"\[Online: archive\.org\]\((.*?)\)");
+        var match = archiveLinkPattern.Match(line);
+        return match.Success ? match.Groups[1].Value : "";
     }
 
     private static void SaveResultsToCSV(List<BibliographyEntry> resultsToSave)
@@ -41,7 +135,8 @@ class PapyriChecklistInfo
             worksheet.Cells[1, 3].Value = "Collection";
             worksheet.Cells[1, 4].Value = "Author";
             worksheet.Cells[1, 5].Value = "Date";
-            worksheet.Cells[1, 6].Value = "Full Text";
+            worksheet.Cells[1, 6].Value = "Archive Link";
+            worksheet.Cells[1, 7].Value = "Full Text";
             foreach (var result in resultsToSave)
             {
                 worksheet.Cells[index, 1].Value = result.BibliographyNumber;
@@ -49,6 +144,7 @@ class PapyriChecklistInfo
                 worksheet.Cells[index, 3].Value = result.Collection;
                 worksheet.Cells[index, 4].Value = result.Author;
                 worksheet.Cells[index, 5].Value = result.PublicationDate;
+                worksheet.Cells[index, 7].Value = result.ArchiveLink;
                 worksheet.Cells[index, 6].Value = result.FullText;
 
 
@@ -66,7 +162,7 @@ class PapyriChecklistInfo
 
         Console.WriteLine("Saved to xlsx");
     }
-
+/*
     private static List<BibliographyEntry> ParseResults(List<ParsedCheckListBlock> parsed, bool fullText = false)
     {
         BibliographyEntry finalResult = null;
@@ -137,6 +233,7 @@ class PapyriChecklistInfo
 
         return entries;
     }
+    */
     
      public class FileUtil
     {
